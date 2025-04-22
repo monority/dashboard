@@ -1,0 +1,75 @@
+@use './variables' as v;
+input,label,button,textarea {
+	font-family: var(--font_family_inter);
+}
+.col {
+	position: relative;
+	flex: 1 0 100%;
+
+	@media screen and (min-width : v.$lg-breakpoint ) {
+		flex: 1 1 0%;
+	}
+}
+
+.input_default {
+	border: var(--border_color01);
+	border-radius: 0.5rem;
+	height: 3.5rem;
+	font-size: 1.3rem;
+	width: 100%;
+	outline: none;
+	padding: 1rem;
+}
+
+.label_default {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	position: absolute;
+	font-size: 1.5rem;
+	top: 50%;
+	left: 15px;
+	transform: translateY(-50%);
+	pointer-events: none;
+	transition: 0.3s;
+	font-size: var(--text_size01);
+}
+
+.input_default:focus ~ label {
+	opacity: 0;
+	top: 0;
+	left: 15px;
+	background: transparent;
+	font-size: 1rem;
+}
+
+
+.btn {
+	border: var(--border_color01);
+	background-color: var(--bg_color02);
+	color: var(--text_color03);
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	font-family: var(--font_family_inter);
+}
+
+.btn_standart {
+	background-color: var(--bg_color02);
+	color: var(--text_color03);
+}
+
+.password_toggle {
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.box{
+	padding: 0.5rem;
+	border: var(--border_color02);
+	border-radius: 1rem;
+}

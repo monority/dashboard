@@ -1,0 +1,95 @@
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	scrollbar-color: var(--scrollbar_color);
+	scrollbar-width: thin;
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--bg_color01);
+	color: var(--text_color01);
+	margin: 0;
+	padding: 0;
+	font-family: var(--font_family_inter);
+	font-size: 1.6rem;
+	font-style: normal;
+	font-optical-sizing: auto;
+	font-feature-settings: normal;
+	font-variation-settings: normal;
+	line-height: 3rem;
+	letter-spacing: -0.05rem;
+	font-weight: 400;
+	word-spacing: 0.35rem;
+	tab-size: 4;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+
+}
+
+
+
+:root {
+	--font_family_inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+	--scrollbar_color: #8e8e8e #ffffff;
+	--transition_default: all 0.2s ease-in-out;
+	--text_size_default: calc(1.185rem + 0.125vw);
+	--title_size_default: calc(4rem + 0.125vw);
+}
+
+[data-theme="dark"] {
+	--text_color01: #eeeeee;
+	--text_color02: #e4e4e4;
+	--bg_color01: rgb(13, 12, 15);
+	--border_color01: solid 0.2px #78797a3b;
+	--box_shadow01: 0 10px 15px -3px #aaaaaa13, 0 4px 6px -4px #e0e0e010;
+	--color_success: #4caf50;
+	--color_warning: #ff9800;
+	--color_error: #f44336;
+	--color_info: #2196f3;
+	--color_primary: #1976d2;
+	--color_secondary: #424242;
+}
+
+[data-theme="light"] {
+	--text_color01: #0f0f0f;
+	--text_color02: oklch(65% 0 0);
+	--text_color03: oklch(89% 0 0);
+	--bg_color01: rgb(255, 255, 255);
+	--bg_color02: rgb(37, 37, 37);
+	--bg_color03: rgb(223, 223, 223);
+	--border_color01: 1px solid rgb(230 232 235/ 1);
+	--border_color02: 1px solid rgb(230 232 235/ 0.5);
+	--box_shadow01: rgba(0, 0, 0, 0.068) 0px 3px 8px;
+	--color_success: #4caf50;
+	--color_warning: #ff9800;
+	--color_error: #f44336;
+	--color_info: #2196f3;
+	--color_primary: #1976d2;
+	--color_secondary: #424242;
+}

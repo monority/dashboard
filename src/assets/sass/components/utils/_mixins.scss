@@ -1,0 +1,49 @@
+@use "variables" as v;
+
+@mixin flex($align, $justify, $direction) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+
+}
+
+@mixin flex_res($align, $justify, $direction, $f_res) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+
+	@media (min-width: v.$lg_breakpoint) {
+		flex-direction: $f_res;
+	}
+
+}
+
+@mixin button ($padding, $bgColor, $color, $width, $height, $border, $border_radius, $color_hover , $font_size, $box_shadow) {
+	padding: $padding;
+	background-color: $bgColor;
+	color: $color;
+	width: $width;
+	height: $height;
+	border: $border;
+	border-radius: $border_radius;
+	font-size: $font_size;
+	box-shadow: $box_shadow;
+	font-family: var(--font_family_inter);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: $color_hover;
+	}
+}
+
+@mixin break_word($line_clamp) {
+	display: -webkit-box;
+	-webkit-line-clamp: $line_clamp;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-clamp: $line_clamp;
+}

@@ -1,0 +1,82 @@
+@use "reset";
+@use "./components/utils/variables" as v;
+@use "./components/utils/mixins" as mixins;
+@use "./components/utils/classes";
+@use "./components/utils/elements";
+@use "./components/utils/variables";
+@use "./components/ui/header";
+@use "./components/ui/sidebar";
+@use "./pages/home";
+
+
+.lyt_container {
+	padding: 0;
+	margin: 0 auto;
+	max-width: 90vw;
+}
+
+.container_responsive {
+	@include mixins.flex_res(initial, center, column, row)
+}
+
+.wrapper_end, .element_end, .container_end {
+	@include mixins.flex(flex-end, flex-end, row)
+}
+
+.wrapper_row,
+.container_row,
+.element_row {
+	@include mixins.flex(center, center, row)
+}
+
+.wrapper_start,
+.container_start,
+.element_start {
+	@include mixins.flex(flex-start, flex-start, row)
+}
+
+.container_center,
+.element_center,
+.wrapper_center {
+	@include mixins.flex(center, center, row);
+}
+
+.wrapper_column_center,
+.container_column_center,
+.element_column_center {
+	@include mixins.flex(center, center, column);
+}
+
+.container_between,
+.element_between,
+.wrapper_between {
+	@include mixins.flex(center, space-between, row);
+}
+
+.container_betweencolumn,
+.element_betweencolumn,
+.wrapper_betweencolumn {
+	@include mixins.flex(flex-start, space-between, column);
+}
+
+.wrapper_column,
+.container_column,
+.element_column {
+	@include mixins.flex(flex-start, flex-start, column);
+
+}
+
+#root{
+	display: flex;
+	min-height: 100vh;
+	@media (max-width: v.$lg_breakpoint) {
+		flex-direction: column;
+	}
+}
+
+main{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+}

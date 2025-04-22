@@ -1,0 +1,12 @@
+#hero {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20rem;
+
+	h1 {
+		font-size: var(--title_size_default);
+		font-weight: 500;
+	}
+}

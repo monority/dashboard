@@ -1,0 +1,31 @@
+@use "../utils/variables" as v;
+#sidebar{
+	border-right:var(--border_color01);
+	padding: 1rem;
+	flex-basis: 15%;
+	@media (max-width: v.$lg_breakpoint) {
+		flex-basis: 100%;
+		border-right: 0;
+		border-bottom: var(--border_color01);
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	li{
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color:var(--text_color02);
+		padding: 0.1rem;
+		border-radius: 0.75rem;
+	}
+	.element{
+		display: flex;
+		align-items: center;
+	}
+	.selected{
+		background-color: var(--bg_color03);
+	}
+}

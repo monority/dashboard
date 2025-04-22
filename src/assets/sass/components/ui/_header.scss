@@ -1,0 +1,38 @@
+@use "../utils/variables" as v;
+
+#header {
+	position: sticky;
+	height: 4.5rem;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border-bottom: var(--border_color01);
+	.container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	nav{
+		width: 100%;
+	}
+	.header__nav{
+		display: flex;
+		justify-content: flex-end;
+		width: 90%;
+		gap: 2rem;
+		@media (max-width: v.$lg_breakpoint) {
+			justify-content: flex-start;
+		}
+		li{
+			font-size: var(--text_size_default);
+			a{
+				color: var(--text_color02);
+			}
+		}
+	}
+	ul,li{
+		display: flex;
+		align-items: center;		
+		
+	}
+}
