@@ -1,8 +1,10 @@
 import React from 'react'
 import Input from './../../../utils/base/Input';
 import Icon from '../../../utils/Icon';
+import { useState } from 'react';
 
 const Sidebar = () => {
+	const [selected, setSelected] = useState(false);
 	return (
 		<>
 			<div id="sidebar">
@@ -20,18 +22,39 @@ const Sidebar = () => {
 					</div>
 					<div className="wrapper">
 						<ul className="sidebar__menu">
-							<li className='selected'>
+							<li className={`${selected && 'selected'} text_size2`}>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p>Home</p>
+									<p>Dashboard</p>
 								</div>
 							</li>
-							<li>Home</li>
-							<li>Home</li>
-							<li>Home</li>
-							<li>Home</li>
+							<li className={`${selected && 'selected'} text_size2`}>
+								<div className="element">
+									<Icon type="home" size='1.5rem' />
+								</div>
+								<div className="element">
+									<p>Mail</p>
+								</div>
+							</li>
+							<li className={`${selected && 'selected'} text_size2`}>
+								<div className="element">
+									<Icon type="home" size='1.5rem' />
+								</div>
+								<div className="element">
+									<p>Task</p>
+								</div>
+							</li>
+					
+							<li className={`${selected && 'selected'} text_size2`}>
+								<div className="element">
+									<Icon type="home" size='1.5rem' />
+								</div>
+								<div className="element">
+									<p>Orders</p>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
