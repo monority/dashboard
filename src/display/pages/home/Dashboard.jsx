@@ -4,8 +4,11 @@ import Graph from '../../components/utils/Graph'
 import Image from '../../components/utils/base/Image'
 import BlockChart from '../../components/ui/element/BlockChart'
 import MessageCard from '../../components/ui/element/MessageCard'
+import Icon from '../../components/utils/Icon'
 
 const Dashboard = () => {
+	const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+	const values = [25, 45, 65, 35, 80];
 	return (
 		<>
 			<section id="dashboard">
@@ -26,7 +29,7 @@ const Dashboard = () => {
 
 								<div className="box_element">
 									<MessageCard
-										avatar={<Image src="https://i.pinimg.com/564x/4c/0b/8f/4c0b8f1a2d3e5a7d6e9f3a2b5c1e4d7b.jpg" alt="Avatar" />}
+										avatar={<Icon type="character" size="2rem" />}
 										fullname="John Doe"
 										email="example@gmail.com"
 										text01="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -73,7 +76,9 @@ const Dashboard = () => {
 								</div>
 								<div className="wrapper_line">
 									<div className="box_element">
-										<BlockChart />
+										<BlockChart
+										values={values}
+										labels={labels} />
 									</div>
 
 

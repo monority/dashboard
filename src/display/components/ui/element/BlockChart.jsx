@@ -1,13 +1,9 @@
 import React from 'react';
 
-// Modify the random generator to have more variation
 const generateRandomValues = (count = 5, min = 10, max = 90) =>
 	Array.from({ length: count }, () => Math.floor(Math.random() * (max - min)) + min);
 
-const BlockChart = () => {
-	const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-	// Use fixed values for more predictable heights
-	const values = [25, 45, 65, 35, 80]; // Or use generateRandomValues(labels.length);
+const BlockChart = ({values, labels}) => {
 
 	return (
 		<div className="chart-container">

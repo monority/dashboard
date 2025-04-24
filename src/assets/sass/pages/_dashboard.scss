@@ -1,34 +1,44 @@
 @use '../components/utils/variables' as v;
+
 #dashboard {
 	.wrapper_line {
 		display: flex;
 		gap: 2rem;
 		height: 100%;
+
 		@media (max-width: v.$md_breakpoint) {
 			flex-direction: column;
 		}
 	}
-	.container{
+
+	.container {
 		display: flex;
 		gap: 2rem;
+
 		@media (max-width: v.$xl_breakpoint) {
 			flex-direction: column;
 		}
 	}
-	.container_right, .container_left{
+
+	.container_right,
+	.container_left {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
 
 	}
-	.container_right{
-		.container_side,.wrapper_line,.element{
+
+	.container_right {
+
+		.container_side,
+		.wrapper_line,
+		.element {
 			height: 100%;
 		}
 	}
-	.box_element{
-		height: 100%;
-width: 100%;
+
+	.box_element {
+		width: 100%;
 
 	}
 }
