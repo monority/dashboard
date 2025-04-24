@@ -20,6 +20,14 @@ input,label,button,textarea {
 	outline: none;
 	padding: 1rem;
 }
+.input_full{
+	border: none;
+	height: 3.5rem;
+	font-size: 1.5rem;
+	width: 100%;
+	outline: none;
+	padding: 1rem;
+}
 
 .label_default {
 	display: flex;
@@ -72,4 +80,15 @@ input,label,button,textarea {
 	padding: 0.5rem;
 	border: var(--border_color02);
 	border-radius: 1rem;
+}
+
+.box_graph{
+	padding: 1.5rem;
+	border: var(--border_color02);
+	border-radius: 1rem;
+	box-shadow: var(--box_shadow01);
+
+	img{
+		width: 100%;
+	}
 }

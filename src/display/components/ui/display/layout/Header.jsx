@@ -7,6 +7,9 @@ const Header = () => {
 		<>
 			<header id="header">
 				<nav>
+					<div className="element">
+						<input type="search" placeholder="Search something..." className="input_full" name="search" />
+					</div>
 					<ul className="header__nav">
 						<li>
 							<Button variant="primary">Sign In</Button>

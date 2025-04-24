@@ -1,0 +1,23 @@
+@use '../components/utils/variables' as v;
+#dashboard {
+	.wrapper_line {
+		display: flex;
+		gap: 2rem;
+		@media (max-width: v.$lg_breakpoint) {
+			flex-direction: column;
+		}
+	}
+	.container{
+		display: flex;
+		gap: 2rem;
+		@media (max-width: v.$lg_breakpoint) {
+			flex-direction: column;
+		}
+	}
+	.container_right, .container_left{
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+	}
+}

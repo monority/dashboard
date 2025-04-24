@@ -6,7 +6,7 @@
 @use "./components/utils/variables";
 @use "./components/ui/header";
 @use "./components/ui/sidebar";
-@use "./pages/home";
+@use "./pages/dashboard";
 
 
 .lyt_container {
@@ -15,6 +15,9 @@
 	max-width: 90vw;
 }
 
+section{
+	padding: 5rem;
+}
 .container_responsive {
 	@include mixins.flex_res(initial, center, column, row)
 }
