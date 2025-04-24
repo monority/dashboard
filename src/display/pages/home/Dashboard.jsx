@@ -7,6 +7,7 @@ import MessageCard from '../../components/ui/element/MessageCard'
 import Icon from '../../components/utils/Icon'
 import PaymentCard from '../../components/ui/element/PaymentCard'
 import SmallBox from '../../components/ui/element/SmallBox'
+import Sales from '../../components/ui/element/Sales'
 
 const Dashboard = () => {
 	const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
@@ -42,6 +43,7 @@ const Dashboard = () => {
 									desc="125"
 									value="45"
 								/>
+								
 								{/* <div className="box_element">
 									<GraphCard
 										title="Total Sales"
@@ -76,7 +78,9 @@ const Dashboard = () => {
 										graph={<Graph type="line" size="2rem" />}
 									/>
 								</div>
-
+								<div className="box_element">
+									<Sales/>
+								</div>
 
 							</div>
 						</div>
