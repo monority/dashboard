@@ -1,7 +1,7 @@
 import React from 'react'
 import Icon from '../../utils/Icon'
 
-const SmallBox = ({title,typeIcon,value,desc}) => {
+const SmallBox = ({ title, typeIcon, value, desc }) => {
 	return (
 		<>
 			<div className="smallbox box_graph">
