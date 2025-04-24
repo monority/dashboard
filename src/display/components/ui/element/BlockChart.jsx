@@ -3,15 +3,23 @@ import React from 'react';
 const generateRandomValues = (count = 5, min = 10, max = 90) =>
 	Array.from({ length: count }, () => Math.floor(Math.random() * (max - min)) + min);
 
-const BlockChart = ({values, labels}) => {
+const BlockChart = ({ values, labels, title, desc }) => {
 
 	return (
 		<div className="chart-container">
 
 			<div className="chart">
 				<div className="chart_wrapper">
+					<div className="chart_title">
+						<div className="element_row">
+							<h3 className="chart-title">{title}</h3>
 
-					<h3 className="chart-title">Stats</h3>
+						</div>
+						<div className="element_row">
+							<p>{desc}</p>
+						</div>
+					</div>
+
 					<div className="block_wrapper">
 
 						{values.map((value, i) => (

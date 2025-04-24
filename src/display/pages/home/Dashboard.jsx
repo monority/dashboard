@@ -8,8 +8,8 @@ import Icon from '../../components/utils/Icon'
 import PaymentCard from '../../components/ui/element/PaymentCard'
 
 const Dashboard = () => {
-	const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-	const values = [25, 45, 65, 35, 80];
+	const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
+	const values = [25, 45, 65, 35, 80, 90, 100, 120];
 	return (
 		<>
 			<section id="dashboard">
@@ -73,7 +73,10 @@ const Dashboard = () => {
 								<div className="box_element">
 									<BlockChart
 										values={values}
-										labels={labels} />
+										labels={labels}
+										title="Sales Overview"
+										desc="Sales overview for the last 7 days"
+										/>
 								</div>
 
 

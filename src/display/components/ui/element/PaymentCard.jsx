@@ -1,10 +1,11 @@
 import React from 'react'
+import Button from '../../utils/base/Button'
 
 const PaymentCard = () => {
 	return (
 		<div className="payment_card box_graph">
 			<div className="container">
-				<div className="wrapper">
+				<div className="wrapper_column gap05">
 					<div className="element">
 						<h3>Payments</h3>
 					</div>
@@ -54,9 +55,13 @@ const PaymentCard = () => {
 						</tbody>
 					</table>
 				</div>
-				<div className="wrapper">
-					<div className="element"></div>
-					<div className="element"></div>
+				<div className="flex gap1">
+					<div className="element">
+						<Button type="primary" size="large" text="View All Payments" />
+					</div>
+					<div className="element">
+						<Button type="secondary" size="large" text="Add Payment" />
+					</div>
 				</div>
 			</div>
 		</div>
