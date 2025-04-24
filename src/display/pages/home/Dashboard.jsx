@@ -5,6 +5,7 @@ import Image from '../../components/utils/base/Image'
 import BlockChart from '../../components/ui/element/BlockChart'
 import MessageCard from '../../components/ui/element/MessageCard'
 import Icon from '../../components/utils/Icon'
+import PaymentCard from '../../components/ui/element/PaymentCard'
 
 const Dashboard = () => {
 	const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
@@ -64,25 +65,18 @@ const Dashboard = () => {
 					</div>
 					<div className="container_right">
 						<div className="container_side">
-							<div className="wrapper_line">
+							<div className="wrapper_column gap2">
 								<div className="box_element">
-									<GraphCard
-										title="Total Sales"
-										desc="Total sales in the last 30 days"
-										sub="Total sales in the last 30 days"
-										graph={<Graph type="line" size="2rem" />}
-										height="100%"
+									<PaymentCard
 									/>
 								</div>
-								<div className="wrapper_line">
-									<div className="box_element">
-										<BlockChart
+								<div className="box_element">
+									<BlockChart
 										values={values}
 										labels={labels} />
-									</div>
-
-
 								</div>
+
+
 							</div>
 						</div>
 
