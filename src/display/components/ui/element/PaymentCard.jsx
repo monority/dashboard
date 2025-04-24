@@ -13,10 +13,6 @@ const PaymentCard = () => {
 						<p>Manage your payments</p>
 					</div>
 				</div>
-				<div className="wrapper">
-					<div className="element"></div>
-					<div className="element"></div>
-				</div>
 				<div className="table_container">
 					<table>
 						<thead>
@@ -55,7 +51,7 @@ const PaymentCard = () => {
 						</tbody>
 					</table>
 				</div>
-				<div className="flex gap1">
+				<div className="wrapper_start">
 					<div className="element">
 						<Button type="primary" size="large" text="View All Payments" />
 					</div>
