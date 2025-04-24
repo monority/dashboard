@@ -43,7 +43,7 @@ const Dashboard = () => {
 									desc="125"
 									value="45"
 								/>
-								
+
 								{/* <div className="box_element">
 									<GraphCard
 										title="Total Sales"
@@ -79,7 +79,23 @@ const Dashboard = () => {
 									/>
 								</div>
 								<div className="box_element">
-									<Sales/>
+									<Sales />
+								</div>
+
+							</div>
+						</div>
+						<div className="container_side">
+							<div className="wrapper_line">
+								<div className="box_element">
+									<MessageCard
+										avatar={<Icon type="character" size="2rem" />}
+										fullname="John Doe"
+										email="example@gmail.com"
+										text01="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+										text02="Ut enim ad minim veniam, quis nostrud exercitation."
+										text03="Duis aute irure dolor in reprehenderit in voluptate."
+										text04="Excepteur sint occaecat cupidatat non proident."
+									/>
 								</div>
 
 							</div>
