@@ -3,14 +3,15 @@
 	.wrapper_line {
 		display: flex;
 		gap: 2rem;
-		@media (max-width: v.$lg_breakpoint) {
+		height: 100%;
+		@media (max-width: v.$md_breakpoint) {
 			flex-direction: column;
 		}
 	}
 	.container{
 		display: flex;
 		gap: 2rem;
-		@media (max-width: v.$lg_breakpoint) {
+		@media (max-width: v.$xl_breakpoint) {
 			flex-direction: column;
 		}
 	}
@@ -24,5 +25,10 @@
 		.container_side,.wrapper_line,.element{
 			height: 100%;
 		}
+	}
+	.box_element{
+		height: 100%;
+width: 100%;
+
 	}
 }

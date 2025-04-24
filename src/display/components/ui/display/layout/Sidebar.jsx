@@ -3,7 +3,9 @@ import Input from './../../../utils/base/Input';
 import Icon from '../../../utils/Icon';
 import { useState } from 'react';
 import Button from '../../../utils/base/Button';
+import { useNavigate } from 'react-router-dom';
 const Sidebar = () => {
+	const navigate = useNavigate();
 	const [selected, setSelected] = useState(false);
 	return (
 		<>
@@ -30,7 +32,7 @@ const Sidebar = () => {
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p>Dashboard</p>
+									<p onClick={() => navigate("/dashboard")}>Dashboard</p>
 								</div>
 							</li>
 							<li className={`${selected && 'selected'} text_size2`}>

@@ -4,7 +4,7 @@ const Graph = ({ type, size = "2rem", action }) => {
 	switch (type) {
 		case 'line':
 			return (
-				<svg width="300" height="120" xmlns="http://www.w3.org/2000/svg">
+				<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M10,100 
        C30,80 50,80 70,90 
