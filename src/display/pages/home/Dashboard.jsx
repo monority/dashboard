@@ -6,6 +6,7 @@ import BlockChart from '../../components/ui/element/BlockChart'
 import MessageCard from '../../components/ui/element/MessageCard'
 import Icon from '../../components/utils/Icon'
 import PaymentCard from '../../components/ui/element/PaymentCard'
+import SmallBox from '../../components/ui/element/SmallBox'
 
 const Dashboard = () => {
 	const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
@@ -17,7 +18,19 @@ const Dashboard = () => {
 					<div className="container_left">
 						<div className="container_side">
 							<div className="wrapper_line">
-								<div className="box_element">
+								<SmallBox
+									title="Total Revenue"
+									typeIcon="money"
+									desc="$45,000.00"
+									value="20,3"
+								/>
+								<SmallBox
+									title="Subscriptions"
+									typeIcon="money"
+									desc="2350"
+									value="11.7"
+								/>
+								{/* <div className="box_element">
 									<GraphCard
 										title="Total Sales"
 										desc="Total sales in the last 30 days"
@@ -38,7 +51,7 @@ const Dashboard = () => {
 										text03="Duis aute irure dolor in reprehenderit in voluptate."
 										text04="Excepteur sint occaecat cupidatat non proident."
 									/>
-								</div>
+								</div> */}
 							</div>
 						</div>
 						<div className="container_side">

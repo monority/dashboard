@@ -1,18 +1,19 @@
 import React from 'react'
+import Icon from '../../utils/Icon'
 
 const SmallBox = ({title,typeIcon,value,desc}) => {
 	return (
 		<>
-			<div className="smallbox">
+			<div className="smallbox box_graph">
 				<div className="element_between">
-					<h3>{title}</h3>
+					<p className='text_size3'>{title}</p>
 					<Icon type={typeIcon} size="2rem" />
 				</div>
 				<div className="element">
-					<p className='text_size1'>{desc}</p>
+					<h5 className='text_size4 bold'>{desc}</h5>
 				</div>
 				<div className="element">
-					<p className='text_size1'>{value}</p>
+					<p className='text_size1 text_color02'>+{value}% from last month</p>
 				</div>
 			</div>
 		</>
