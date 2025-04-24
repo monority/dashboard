@@ -30,6 +30,18 @@ const Dashboard = () => {
 									desc="2350"
 									value="11.7"
 								/>
+								<SmallBox
+									title="Sales"
+									typeIcon="money"
+									desc="12500"
+									value="5.7"
+								/>
+								<SmallBox
+									title="Active now"
+									typeIcon="money"
+									desc="125"
+									value="45"
+								/>
 								{/* <div className="box_element">
 									<GraphCard
 										title="Total Sales"
@@ -65,14 +77,7 @@ const Dashboard = () => {
 									/>
 								</div>
 
-								<div className="box_element">
-									<GraphCard
-										title="Total Sales"
-										desc="Total sales in the last 30 days"
-										sub="Total sales in the last 30 days"
-										graph={<Graph type="line" size="2rem" />}
-									/>
-								</div>
+
 							</div>
 						</div>
 					</div>
@@ -89,7 +94,7 @@ const Dashboard = () => {
 										labels={labels}
 										title="Sales Overview"
 										desc="Sales overview for the last 7 days"
-										/>
+									/>
 								</div>
 
 
