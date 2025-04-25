@@ -33,7 +33,6 @@ const Sales = ({ users = [] }) => {
 		}
 	];
 
-	// Use provided users or default if empty
 	const salesData = users.length > 0 ? users : defaultUsers;
 
 	return (
@@ -53,18 +52,18 @@ const Sales = ({ users = [] }) => {
 						{salesData.map(user => (
 							<div key={user.id} className="wrapper_between">
 								<div className="user_info">
-								
+
 									<div className="user_details">
-										<h4 className="user_name">{user.name}</h4>
-										<p className="user_email text_color02">{user.email}</p>
+										<h5 className="user_name">{user.name}</h5>
+										<p className="user_email text_color02 text_size1">{user.email}</p>
 									</div>
 								</div>
 
 								<div className="sale_details">
-									<div className="amount">{user.amount}</div>
+									<div className="amount bold text_size1">{user.amount}</div>
 								</div>
 
-						
+
 							</div>
 						))}
 					</div>

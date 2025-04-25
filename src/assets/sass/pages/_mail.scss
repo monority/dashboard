@@ -1,0 +1,19 @@
+@use "../components/utils/variables" as v;
+.mail_page{
+	.container{
+		display: flex;
+	}
+	.sidebar{
+		height: 100%;
+		border-bottom: none;
+		border-right: var(--border_color01);
+		@media (max-width: v.$lg_breakpoint){
+			flex-basis: 20%;
+			border-bottom: var(--border_color01);
+			
+		}
+	}
+	.content{
+		flex-basis: 80%;
+	}
+}

@@ -11,6 +11,7 @@
 @use "./components/ui/paymentcard";
 @use "./components/ui/sales";
 @use "./pages/dashboard";
+@use "./pages/mail";
 
 
 .lyt_container {
@@ -22,9 +23,11 @@
 section{
 	padding: 5rem;
 	@media screen and (max-width: v.$lg_breakpoint) {
-		padding: 2rem;
-		
+		padding: 0;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
+	
 }
 .container_responsive {
 	@include mixins.flex_res(initial, center, column, row)
