@@ -8,6 +8,21 @@
 	.container{
 		display: flex;
 	}
+	.menu_item{
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		padding: 0.65rem 0.5rem;
+		border-radius: 1rem;
+		.element{
+			display: flex;
+			align-items: center;
+		}
+	}
+	.selected{
+		background-color: var(--bg_color02);
+		color: white;
+	}
 	.sidebar{
 		height: 100%;
 		border-bottom: none;
