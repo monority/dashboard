@@ -2,7 +2,7 @@ import React from 'react'
 
 const Mail = () => {
 	return (
-		<section id="dashboard" className='mail_page'>
+		<div id="dashboard" className='mail_page'>
 			<div className="container">
 				<div className="sidebar">
 					<div className="wrapper">
@@ -24,7 +24,7 @@ const Mail = () => {
 					<h1>yes</h1>
 				</div>
 			</div>
-		</section>
+		</div>
 	)
 }
 
