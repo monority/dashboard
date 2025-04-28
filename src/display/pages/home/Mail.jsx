@@ -15,10 +15,10 @@ const Mail = () => {
 				<div className="sidebar">
 					<div className="wrapper">
 						<div className="element">
-							{/* Add content here if needed */}
 						</div>
 					</div>
-					<div className="wrapper">
+					<div className="wrapper_sidebar">
+						
 						<ul>
 							<li
 								className={selectedMenu === 'Inbox' ? 'menu_item selected' : 'menu_item'}
@@ -77,6 +77,70 @@ const Mail = () => {
 								</div>
 								<div className="element">
 									<p>Archive</p>
+
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div className="wrapper_sidebar">
+						<ul>
+							<li
+								className={selectedMenu === 'Social' ? 'menu_item selected' : 'menu_item'}
+								onClick={() => handleMenuClick('Social')}
+							>
+								<div className="element">
+									<Icon type="group" size="2rem" />
+								</div>
+								<div className="element">
+									<p>Social</p>
+
+								</div>
+							</li>
+							<li
+								className={selectedMenu === 'Forum' ? 'menu_item selected' : 'menu_item'}
+								onClick={() => handleMenuClick('Forum')}
+							>
+								<div className="element">
+									<Icon type="sent" size="2rem" />
+								</div>
+								<div className="element">
+									<p>Forum</p>
+
+								</div>
+							</li>
+							<li
+								className={selectedMenu === 'Shopping' ? 'menu_item selected' : 'menu_item'}
+								onClick={() => handleMenuClick('Shopping')}
+							>
+								<div className="element">
+									<Icon type="shopping" size="2rem" />
+								</div>
+								<div className="element">
+									<p>Shopping</p>
+
+								</div>
+							</li>
+							<li
+								className={selectedMenu === 'Promotion' ? 'menu_item selected' : 'menu_item'}
+								onClick={() => handleMenuClick('Promotion')}
+							>
+								<div className="element">
+									<Icon type="promotion" size="2rem" />
+								</div>
+								<div className="element">
+									<p>Promotion</p>
+
+								</div>
+							</li>
+							<li
+								className={selectedMenu === 'Updates' ? 'menu_item selected' : 'menu_item'}
+								onClick={() => handleMenuClick('Updates')}
+							>
+									<div className="element">
+									<Icon type="update" size="1.75rem" />
+								</div>
+								<div className="element">
+									<p>Update</p>
 
 								</div>
 							</li>
