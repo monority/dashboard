@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Icon from '../Icon'
-const Input = ({ type, initialValue, name, defValue, placeholder }) => {
+import Icon from '../Icon';
+
+const Input = ({ type, initialValue, name, defValue, placeholder, icon, className = '', inputClassName }) => {
 	const [value, setValue] = useState(initialValue || defValue || '');
 	const [isFocused, setIsFocused] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
@@ -26,25 +27,28 @@ const Input = ({ type, initialValue, name, defValue, placeholder }) => {
 	};
 
 	return (
-		<div className="form_element relative">
-			<input
-				type={inputType}
-				value={value}
-				name={name}
-				id={name}
-				onChange={handleChange}
-				onFocus={handleFocus}
-				onBlur={handleBlur}
-				placeholder={placeholder}
-				className='input_default'
-				min={type === 'number' ? 1 : undefined}
-				max={type === 'number' ? 8 : undefined}
-			/>
-			<label
-				htmlFor={name}
-				className={`label_default ${value && !isFocused ? 'label_disabled' : ''}`}
-			>
-			</label>
+		<div className={`form_element relative ${className}`}>
+			<div className="input_wrapper">
+				{icon && <>{icon}</>}
+				<input
+					type={inputType}
+					value={value}
+					name={name}
+					id={name}
+					onChange={handleChange}
+					onFocus={handleFocus}
+					onBlur={handleBlur}
+					placeholder={placeholder}
+					className={` ${icon ? 'with_icon' : ''} ${inputClassName}`}
+					min={type === 'number' ? 1 : undefined}
+					max={type === 'number' ? 8 : undefined}
+				/>
+				<label
+					htmlFor={name}
+					className={`label_default ${value && !isFocused ? 'label_disabled' : ''}`}
+				>
+				</label>
+			</div>
 
 			{isPassword && (
 				<button

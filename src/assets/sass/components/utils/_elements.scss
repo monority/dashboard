@@ -20,6 +20,23 @@ input,label,button,textarea {
 	outline: none;
 	padding: 1rem;
 }
+.input_search{
+	border: none;
+	outline: none;
+}
+.input_wrapper {
+	border: var(--border_color01);
+	border-radius: 0.5rem;
+	height: 3.5rem;
+	font-size: 1.3rem;
+	width: 100%;
+	outline: none;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
 .input_full{
 	border: none;
 	height: 3.5rem;

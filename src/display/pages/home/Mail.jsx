@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import Icon from '../../components/utils/Icon';
+import Input from './../../components/utils/base/Input';
 
 const Mail = () => {
 	const [selectedMenu, setSelectedMenu] = useState('Inbox'); // Default selected item
@@ -11,14 +12,15 @@ const Mail = () => {
 
 	return (
 		<div id="dashboard" className='mail_page'>
-			<div className="container">
-				<div className="sidebar">
+			<div className="container_mail">
+				<div className="sidebar border_sidebar">
 					<div className="wrapper">
-						<div className="element">
+						<div className="element_title">
+							<h1>Mail</h1>
 						</div>
 					</div>
 					<div className="wrapper_sidebar">
-						
+
 						<ul>
 							<li
 								className={selectedMenu === 'Inbox' ? 'menu_item selected' : 'menu_item'}
@@ -72,7 +74,7 @@ const Mail = () => {
 								className={selectedMenu === 'Archive' ? 'menu_item selected' : 'menu_item'}
 								onClick={() => handleMenuClick('Archive')}
 							>
-									<div className="element">
+								<div className="element">
 									<Icon type="archive" size="1.75rem" />
 								</div>
 								<div className="element">
@@ -136,7 +138,7 @@ const Mail = () => {
 								className={selectedMenu === 'Updates' ? 'menu_item selected' : 'menu_item'}
 								onClick={() => handleMenuClick('Updates')}
 							>
-									<div className="element">
+								<div className="element">
 									<Icon type="update" size="1.75rem" />
 								</div>
 								<div className="element">
@@ -147,8 +149,29 @@ const Mail = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="content">
-					<h1>{selectedMenu}</h1>
+				<div className="content border_sidebar">
+					<div className="element_title">
+						<h1>{selectedMenu}</h1>
+					</div>
+					<div className="wrapper pad_inline">
+						<div className="element">
+
+							<div className="element">
+								<Input
+									type="text"
+									inputClassName="input_search"
+									placeholder='Search'
+									icon={<Icon type="search" size="2rem" />}
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="mail_content border_sidebar">
+					<div className="element_title">
+						<h1>Mail Content</h1>
+
+					</div>
 				</div>
 			</div>
 		</div>

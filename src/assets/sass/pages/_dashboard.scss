@@ -20,6 +20,7 @@
 		}
 	}
 
+
 	.container_right,
 	.container_left {
 		display: flex;
@@ -36,10 +37,12 @@
 			height: 100%;
 		}
 	}
-	.container_side{
+
+	.container_side {
 		display: flex;
 		flex-direction: column;
 	}
+
 	.box_element {
 		width: 100%;
 

@@ -20,8 +20,12 @@ const Sidebar = () => {
 						</div>
 					</div>
 					<div className="wrapper">
-						<Input type="search" placeholder="Search" className="input_default" name="search" />
-					</div>
+					<Input
+									type="text"
+									inputClassName="input_search"
+									placeholder='Search'
+									icon={<Icon type="search" size="2rem" />}
+								/>					</div>
 					<div className="wrapper">
 						<div className="element">
 							<h4>Title</h4>
