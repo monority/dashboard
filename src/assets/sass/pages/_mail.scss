@@ -10,7 +10,11 @@
 
 	.container_mail {
 		display: flex;
+	@media (max-width: v.$lg_breakpoint) {
+			flex-direction: column;
+		}
 	}
+
 
 	.menu_item {
 		display: flex;
@@ -76,12 +80,15 @@
 	}
 
 	.container_mailcontent {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-
-		width: 100%;
-	}
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        max-height: 75vh;
+		
+        overflow-y: auto; 
+        padding-bottom: 2rem;
+    }
 	.mail_box{
 		display: flex;
 		flex-direction: column;
