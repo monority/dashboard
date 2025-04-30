@@ -2,13 +2,56 @@ import React from 'react'
 import { useState } from 'react';
 import Icon from '../../components/utils/Icon';
 import Input from './../../components/utils/base/Input';
+import MailCard from '../../components/ui/element/MailCard';
 
 const Mail = () => {
-	const [selectedMenu, setSelectedMenu] = useState('Inbox'); // Default selected item
-
+	const [selectedMenu, setSelectedMenu] = useState('Inbox');
+	const mailcontent = [
+		{
+		fullName: 'John Doe',
+		date: '24 Aug 2023',
+		subtitle: 'meeting tomorrow',
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		badge: ['New', 'Important']
+	},
+		{
+		fullName: 'John Doe',
+		date: '24 Aug 2023',
+		subtitle: 'meeting tomorrow',
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		badge: ['New', 'Important']
+	},
+		{
+		fullName: 'John Doe',
+		date: '24 Aug 2023',
+		subtitle: 'meeting tomorrow',
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		badge: ['New', 'Important']
+	},
+		{
+		fullName: 'John Doe',
+		date: '24 Aug 2023',
+		subtitle: 'meeting tomorrow',
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		badge: ['New', 'Important']
+	},
+	]
 	const handleMenuClick = (menuName) => {
 		setSelectedMenu(menuName);
 	};
+
+	const mailMap = mailcontent.map((mail, index) => {
+		return (
+			<MailCard
+				key={index}
+				fullName={mail.fullName}
+				date={mail.date}
+				subtitle={mail.subtitle}
+				content={mail.content}
+				badge={mail.badge}
+			/>
+		)
+	})
 
 	return (
 		<div id="dashboard" className='mail_page'>
@@ -153,8 +196,8 @@ const Mail = () => {
 					<div className="element_title">
 						<h1>{selectedMenu}</h1>
 					</div>
-					<div className="wrapper pad_inline">
-						<div className="element">
+					<div className="container_column pad_inline gap2">
+						<div className="wrapper w_100">
 
 							<div className="element">
 								<Input
@@ -165,11 +208,13 @@ const Mail = () => {
 								/>
 							</div>
 						</div>
+						<div className="container_mailcontent">
+							{mailMap}
+						</div>
 					</div>
 				</div>
 				<div className="mail_content border_sidebar">
 					<div className="element_title">
-						<h1>Mail Content</h1>
 
 					</div>
 				</div>

@@ -1,59 +1,99 @@
 @use "../components/utils/variables" as v;
-.mail_page{
+
+.mail_page {
 	height: 100%;
-	.container,.sidebar 
-	{
+
+	.container,
+	.sidebar {
 		height: 100%;
 	}
-	.container_mail{
+
+	.container_mail {
 		display: flex;
 	}
-	.menu_item{
+
+	.menu_item {
 		display: flex;
 		gap: 1rem;
 		align-items: center;
 		padding: 0.65rem 0.5rem;
 		border-radius: 1rem;
-		.element{
+
+		.element {
 			display: flex;
 			align-items: center;
 		}
 	}
-	.pad_inline{
+
+	.pad_inline {
 		padding-inline: 2rem;
 	}
-	.pad_base{
+
+	.pad_base {
 		padding: 2rem;
 	}
-	.selected{
+
+	.selected {
 		background-color: var(--bg_color02);
 		color: white;
 	}
-	.sidebar{
+
+	.sidebar {
 		height: 100%;
 		flex-basis: 20%;
-		.wrapper_sidebar{
+
+		.wrapper_sidebar {
 			border-bottom: var(--border_color01);
 		}
-		ul{
+
+		ul {
 			padding: 2rem;
 		}
-		
+
 	}
-	.element_title{padding: 2rem;}
-	.content{
+
+	.element_title {
+		padding: 2rem;
+	}
+
+	.content {
 		flex-basis: 40%;
-		
+
 	}
-	.mail_content{
+
+	.mail_content {
 		flex-basis: 40%
 	}
-	.border_sidebar{
+
+	.border_sidebar {
 		border-bottom: none;
 		border-right: var(--border_color01);
-		@media (max-width: v.$lg_breakpoint){
+
+		@media (max-width: v.$lg_breakpoint) {
 			border-bottom: var(--border_color01);
-			
+
 		}
+	}
+
+	.container_mailcontent {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		width: 100%;
+	}
+	.mail_box{
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+	background-color: var(--bg_color05);
+		border-radius: 1rem;
+	}
+
+	.badge-new {
+		background-color: var(--bg_color04);
+		color: white;
+		padding: 0.25rem 1rem;
+		border-radius: 1rem;
 	}
 }
