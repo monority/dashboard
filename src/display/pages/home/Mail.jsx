@@ -341,7 +341,10 @@ const mailMap = mailcontent.map((mail) => {
 								</div>
 							</div>
 							<div className="mail_body pad_base">
+								<p className='text_size2'>
 								{selectedMail.fullContent}
+
+								</p>
 							</div>
 							<div className="mail_actions pad_base">
 								<textarea name="" id="" placeholder='reply' className='textarea'></textarea>

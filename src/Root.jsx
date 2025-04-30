@@ -6,6 +6,7 @@ import Sidebar from './display/components/ui/display/layout/Sidebar';
 import MainContainer from './MainContainer';
 import Dashboard from './display/pages/home/Dashboard';
 import Mail from './display/pages/home/Mail';
+import Task from './display/pages/home/Task';
 
 const Root = () => {
 	return (
@@ -17,6 +18,7 @@ const Root = () => {
 					<Route  path="/" element={<App />} />
 					<Route  path="/dashboard" element={<Dashboard />} />
 					<Route  path="/mail" element={<Mail />} />
+					<Route  path="/task" element={<Task />} />
 				</Routes>
 			</MainContainer>
 		</BrowserRouter>
