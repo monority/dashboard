@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Icon from '../../components/utils/Icon';
 import Input from './../../components/utils/base/Input';
 import MailCard from '../../components/ui/element/MailCard';
+import Button from '../../components/utils/base/Button';
 
 const Mail = () => {
 	const [selectedMenu, setSelectedMenu] = useState('Inbox');
@@ -134,20 +135,24 @@ const Mail = () => {
 	const handleMailClick = (mail) => {
 		setSelectedMail(mail);
 	};
-console.log(selectedMail)
-	const mailMap = mailcontent.map((mail) => {
-		return (
-			<div key={mail.id} className={`${selectedMail.id == mail.id ? "mail_select mail_box" : "mail_box"}`} onClick={() => handleMailClick(mail)}>
-				<MailCard
-					fullName={mail.fullName}
-					date={mail.date}
-					subtitle={mail.subtitle}
-					content={mail.content}
-					badge={mail.badge}
-				/>
-			</div>
-		)
-	})
+const mailMap = mailcontent.map((mail) => {
+    const isSelected = selectedMail && selectedMail.id === mail.id; 
+    return (
+        <div
+            key={mail.id}
+            className={`${isSelected ? "mail_select mail_box" : "mail_box"}`}
+            onClick={() => handleMailClick(mail)}
+        >
+            <MailCard
+                fullName={mail.fullName}
+                date={mail.date}
+                subtitle={mail.subtitle}
+                content={mail.content}
+                badge={mail.badge}
+            />
+        </div>
+    );
+});
 	return (
 		<div id="dashboard" className='mail_page'>
 			<div className="container_mail">
@@ -339,14 +344,8 @@ console.log(selectedMail)
 								{selectedMail.fullContent}
 							</div>
 							<div className="mail_actions pad_base">
-								<button className="btn_reply">
-									<Icon type="reply" size="1.5rem" />
-									<span>Reply</span>
-								</button>
-								<button className="btn_forward">
-									<Icon type="forward" size="1.5rem" />
-									<span>Forward</span>
-								</button>
+								<textarea name="" id="" placeholder='reply' className='textarea'></textarea>
+								<Button> Send</Button>
 							</div>
 						</>
 					) : (

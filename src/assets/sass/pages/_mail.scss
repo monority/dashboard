@@ -110,4 +110,16 @@
 		padding: 1rem;
 		border-bottom: var(--border_color01);
 	}
+	.textarea{
+		width: 100%;
+		height: 100%;
+		border-radius: 1rem;
+		padding: 1rem;
+		border: var(--border_color01);
+		resize: none;
+		outline: none;
+		font-size: 1.2rem;
+		background-color: var(--bg_color05);
+		color: var(--text_color01);
+	}
 }
