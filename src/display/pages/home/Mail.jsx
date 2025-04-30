@@ -7,7 +7,6 @@ import MailCard from '../../components/ui/element/MailCard';
 const Mail = () => {
 	const [selectedMenu, setSelectedMenu] = useState('Inbox');
 	const [selectedMail, setSelectedMail] = useState(null);
-
 	const mailcontent = [
 		{
 			id: 1,
@@ -16,16 +15,15 @@ const Mail = () => {
 			subtitle: 'Project Update - Q2 Dashboard Review',
 			content: 'Hi there, just wanted to check in on the dashboard project progress. Can we schedule a review meeting for next week?',
 			badge: ['New', 'Important'],
-			fullContent: `
-            <p>Hello,</p>
-            <p>I wanted to check in on how the dashboard project is coming along. We're approaching the end of Q2 and I'd like to organize a review with stakeholders next week if possible.</p>
-            <p>Could you share your availability for either Tuesday or Wednesday afternoon? I think we'll need about 90 minutes to go through all the features and gather feedback.</p>
-            <p>Also, if you could prepare a brief demo of the new analytics features we discussed last time, that would be great.</p>
-            <p>Looking forward to seeing the progress!</p>
-            <p>Best regards,<br>Emma Johnson<br>Product Manager</p>
-          `
+			fullContent: `Hello,
+			I wanted to check in on how the dashboard project is coming along. We're approaching the end of Q2 and I'd like to organize a review with stakeholders next week if possible.
+			Could you share your availability for either Tuesday or Wednesday afternoon? I think we'll need about 90 minutes to go through all the features and gather feedback.
+			Also, if you could prepare a brief demo of the new analytics features we discussed last time, that would be great.
+			Looking forward to seeing the progress
+			Best regards,
+			Emma Johnson
+			Product Manager`
 		},
-		// Add fullContent to your other mail items similarly
 		{
 			id: 2,
 			fullName: 'Tech Newsletter',
@@ -33,17 +31,101 @@ const Mail = () => {
 			subtitle: 'Weekly Dev Updates: React 19 Released',
 			content: 'This week in tech: React 19 is out with new concurrency features, GitHub Copilot adds new VS Code extensions, and more.',
 			badge: ['Newsletter'],
-			fullContent: `
-            <h2>Weekly Developer Updates</h2>
-            <h3>React 19 Released</h3>
-            <p>The React team has officially released version 19, featuring improved concurrency features, better server components support, and reduced bundle sizes.</p>
-            <h3>GitHub Copilot Expands</h3>
-            <p>GitHub has introduced new VS Code extensions for Copilot, allowing for better code suggestions and documentation integration.</p>
-            <h3>Other News</h3>
-            <p>- TypeScript 6.0 beta now available<br>- Next.js introduces new data fetching APIs<br>- Vue.js announces Nuxt 4 roadmap</p>
-          `
+			fullContent: `Weekly Developer Updates
+			React 19 Released
+			The React team has officially released version 19, featuring improved concurrency features, better server components support, and reduced bundle sizes.
+			GitHub Copilot Expands
+			GitHub has introduced new VS Code extensions for Copilot, allowing for better code suggestions and documentation integration.
+			Other News:
+			- TypeScript 6.0 beta now available
+			- Next.js introduces new data fetching APIs
+			- Vue.js announces Nuxt 4 roadmap`
+		},
+		{
+			id: 3,
+			fullName: 'Michael Chen',
+			date: '28 Apr 2025',
+			subtitle: 'Design feedback needed',
+			content: 'I\'ve shared the new UI mockups in Figma. Could you take a look at the dashboard layout and let me know your thoughts?',
+			badge: ['Design'],
+			fullContent: `Hi there,
+			I've just pushed the latest UI mockups to our shared Figma workspace. The new dashboard layout incorporates the feedback from our last meeting and includes several alternative layouts for the analytics section.
+			Could you review them when you get a chance? I'm particularly interested in your thoughts on:
+			- The new card-based layout for metrics
+			- The revised color scheme for data visualization
+			- The mobile responsive behavior
+			I'll be available tomorrow afternoon if you want to discuss any of these points in more detail.
+			Thanks!
+			Michael`
+		},
+		{
+			id: 4,
+			fullName: 'Sarah Williams',
+			date: '27 Apr 2025',
+			subtitle: 'Team meeting rescheduled',
+			content: 'Just a quick note that our weekly sync has been moved to Thursday at 2pm instead of Wednesday this week.',
+			badge: ['Team'],
+			fullContent: `Team,
+			Just a quick note that we need to reschedule our weekly sync this week from Wednesday 10am to Thursday 2pm.
+			The product team has a conflicting all-hands meeting that several of us need to attend. I've already updated the calendar invite with the new time.
+			If anyone has conflicts with the new time, please let me know ASAP so we can find an alternative.
+			Best,
+			Sarah`
+		},
+		{
+			id: 5,
+			fullName: 'Alex Rodriguez',
+			date: '26 Apr 2025',
+			subtitle: 'API Documentation updated',
+			content: 'I\'ve updated the API docs with the new endpoints we discussed. You can find them in the shared Google Drive folder.',
+			badge: ['Technical'],
+			fullContent: `Hey team,
+			I've finished updating our API documentation with the new endpoints we discussed in last week's architecture meeting. You can find the updated docs in our shared Google Drive folder under "Technical Docs > API > v2".
+			Key updates include:
+			- New analytics data endpoints
+			- Improved authentication flow
+			- Rate limiting documentation
+			- Example requests and responses for each endpoint
+			Please review when you get a chance and let me know if you spot any issues or have questions.
+			Thanks,
+			Alex`
+		},
+		{
+			id: 6,
+			fullName: 'Client Solutions',
+			date: '25 Apr 2025',
+			subtitle: 'Your subscription renewal',
+			content: 'Your premium dashboard subscription is due for renewal next week. Save 20% by renewing early!',
+			badge: ['Promotion'],
+			fullContent: `Hello Valued Customer,
+			Your Dashboard Pro subscription is scheduled to renew on May 5, 2025. As a valued customer, we'd like to offer you a special early renewal discount!
+			Renew today and save 20% on your annual subscription.
+			Your current plan includes:
+			- Unlimited dashboards
+			- Advanced analytics
+			- Priority support
+			- Custom integrations
+			To take advantage of this offer, simply click the button below and use code EARLY20 at checkout.
+			We appreciate your business!
+			The Client Solutions Team`
+		},
+		{
+			id: 7,
+			fullName: 'Olivia Baker',
+			date: '24 Apr 2025',
+			subtitle: 'Questions about the chart component',
+			content: 'I\'m trying to implement the block chart but having issues with the responsive layout. Do you have any examples?',
+			badge: ['Support', 'Urgent'],
+			fullContent: `Hi there,
+			I'm working on implementing the block chart component for our dashboard and running into some issues with the responsive layout. When the viewport width changes, the charts aren't adjusting properly and sometimes overlap with other elements.
+			I've tried following the documentation, but I'm still having trouble. Do you have any working examples of responsive implementations I could look at?
+			Also, is there a recommended approach for handling different screen sizes with these charts? Should I be using different chart types for mobile vs desktop?
+			This is blocking our release scheduled for next week, so any help would be greatly appreciated!
+			Thanks,
+			Olivia`
 		}
 	];
+
 
 	const handleMenuClick = (menuName) => {
 		setSelectedMenu(menuName);
@@ -52,10 +134,10 @@ const Mail = () => {
 	const handleMailClick = (mail) => {
 		setSelectedMail(mail);
 	};
-
+console.log(selectedMail)
 	const mailMap = mailcontent.map((mail) => {
 		return (
-			<div key={mail.id} onClick={() => handleMailClick(mail)}>
+			<div key={mail.id} className={`${selectedMail.id == mail.id ? "mail_select mail_box" : "mail_box"}`} onClick={() => handleMailClick(mail)}>
 				<MailCard
 					fullName={mail.fullName}
 					date={mail.date}
@@ -227,6 +309,12 @@ const Mail = () => {
 					</div>
 				</div>
 				<div className="mail_content border_sidebar">
+					<div className="mail_buttons">
+						<div className="flex a_center gap1">
+						<Icon type="trash" size="2rem" />
+						<Icon type="archive" size="1.75rem" />
+						</div>
+					</div>
 					{selectedMail ? (
 						<>
 							<div className="mail_header pad_base">
@@ -248,7 +336,7 @@ const Mail = () => {
 								</div>
 							</div>
 							<div className="mail_body pad_base">
-								<div dangerouslySetInnerHTML={{ __html: selectedMail.fullContent }} />
+								{selectedMail.fullContent}
 							</div>
 							<div className="mail_actions pad_base">
 								<button className="btn_reply">

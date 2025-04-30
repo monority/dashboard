@@ -92,15 +92,22 @@
 	.mail_box{
 		display: flex;
 		flex-direction: column;
-		padding: 2rem;
+		padding: 1.2rem;
 	background-color: var(--bg_color05);
 		border-radius: 1rem;
+		transition: all 0.125s ease-in-out;
 	}
-
+	.mail_select{
+		background-color: var(--bg_color06);
+	}
 	.badge-new {
 		background-color: var(--bg_color04);
 		color: white;
 		padding: 0.25rem 1rem;
 		border-radius: 1rem;
+	}
+	.mail_buttons{
+		padding: 1rem;
+		border-bottom: var(--border_color01);
 	}
 }

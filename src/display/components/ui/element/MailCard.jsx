@@ -3,7 +3,7 @@ import React from 'react'
 const MailCard = ({ fullName, date, subtitle, content, badge }) => {
     return (
         <>
-            <div className="mail_box w_100">
+            <>
                 <div className="element_between">
                     <h5>{fullName}</h5>
                     <p className='text_size1'>{date}</p>
@@ -27,7 +27,7 @@ const MailCard = ({ fullName, date, subtitle, content, badge }) => {
                         );
                     })}
                 </div>
-            </div>
+            </>
         </>
     )
 }
