@@ -51,19 +51,20 @@
 								width: 1.2rem;
 								height: 1.2rem;
 							}
-
+							.drop_menu{
+								position: absolute;
+								top: 0;
+								left: 0;
+							}
 							.context_menu_button {
 								background: none;
 								border: none;
 								cursor: pointer;
 								padding: 0.5rem;
 								border-radius: 4px;
-								transition: background-color 0.2s;
-
-								&:hover {
-									background-color: #f0f0f0;
-								}
-
+								transition: background-color 0.2s;	
+								position: relative;
+					
 								svg {
 									fill: #555;
 								}

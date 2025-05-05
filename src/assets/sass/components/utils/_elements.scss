@@ -114,3 +114,9 @@ width: 100%;
 .border_bottom{
 	border-bottom: var(--border_color01);
 }
+.standart_box{
+	background-color: var(--bg_color01);
+	padding: 1rem;
+	border-radius: 0.75rem;
+	border:var(--border_color01	);
+}
