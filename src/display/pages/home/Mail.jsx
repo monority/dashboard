@@ -6,8 +6,6 @@ import MailCard from '../../components/ui/element/MailCard';
 import Button from '../../components/utils/base/Button';
 
 const Mail = () => {
-	const [selectedMenu, setSelectedMenu] = useState('Inbox');
-	const [selectedMail, setSelectedMail] = useState(null);
 	const mailcontent = [
 		{
 			id: 1,
@@ -128,6 +126,9 @@ const Mail = () => {
 	];
 
 
+	const [selectedMenu, setSelectedMenu] = useState('Inbox');
+	const [selectedMail, setSelectedMail] = useState(mailcontent[0]);
+
 	const handleMenuClick = (menuName) => {
 		setSelectedMenu(menuName);
 	};
@@ -135,24 +136,24 @@ const Mail = () => {
 	const handleMailClick = (mail) => {
 		setSelectedMail(mail);
 	};
-const mailMap = mailcontent.map((mail) => {
-    const isSelected = selectedMail && selectedMail.id === mail.id; 
-    return (
-        <div
-            key={mail.id}
-            className={`${isSelected ? "mail_select mail_box" : "mail_box"}`}
-            onClick={() => handleMailClick(mail)}
-        >
-            <MailCard
-                fullName={mail.fullName}
-                date={mail.date}
-                subtitle={mail.subtitle}
-                content={mail.content}
-                badge={mail.badge}
-            />
-        </div>
-    );
-});
+	const mailMap = mailcontent.map((mail) => {
+		const isSelected = selectedMail && selectedMail.id === mail.id;
+		return (
+			<div
+				key={mail.id}
+				className={`${isSelected ? "mail_select mail_box" : "mail_box"}`}
+				onClick={() => handleMailClick(mail)}
+			>
+				<MailCard
+					fullName={mail.fullName}
+					date={mail.date}
+					subtitle={mail.subtitle}
+					content={mail.content}
+					badge={mail.badge}
+				/>
+			</div>
+		);
+	});
 	return (
 		<div id="dashboard" className='mail_page'>
 			<div className="container_mail">
@@ -316,8 +317,8 @@ const mailMap = mailcontent.map((mail) => {
 				<div className="mail_content border_sidebar">
 					<div className="mail_buttons">
 						<div className="flex a_center gap1">
-						<Icon type="trash" size="2rem" />
-						<Icon type="archive" size="1.75rem" />
+							<Icon type="trash" size="2rem" />
+							<Icon type="archive" size="1.75rem" />
 						</div>
 					</div>
 					{selectedMail ? (
@@ -342,7 +343,7 @@ const mailMap = mailcontent.map((mail) => {
 							</div>
 							<div className="mail_body pad_base">
 								<p className='text_size2'>
-								{selectedMail.fullContent}
+									{selectedMail.fullContent}
 
 								</p>
 							</div>

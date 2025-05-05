@@ -1,0 +1,96 @@
+.task {
+	padding: 2rem;
+
+	.container {
+
+		.wrapper_column {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+
+			.element {
+
+				.input_search {
+					width: 100%;
+					padding: 0.8rem 1rem;
+					border: 1px solid #ddd;
+					border-radius: 4px;
+					font-size: 1rem;
+					color: #333;
+
+					&:focus {
+						outline: none;
+						border-color: #007bff;
+						box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+					}
+
+					&::placeholder {
+						color: #aaa;
+					}
+				}
+			}
+
+			.task_table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 1rem;
+				border: var(--border_color01);
+				border-radius: 1rem;
+
+				thead {
+					tr {
+						background-color: #f4f4f4;
+
+						th {
+							padding: 1rem;
+							text-align: left;
+							font-size: 1.2rem;
+							color: #555;
+							border-bottom: 2px solid #ddd;
+						}
+					}
+				}
+
+				tbody {
+					tr {
+						&:nth-child(even) {
+							background-color: #f9f9f9;
+						}
+
+						&:hover {
+							background-color: #f1f1f1;
+						}
+
+						td {
+							padding: 1rem;
+							font-size: 1.2rem;
+							border-bottom: 1px solid #ddd;
+
+							input[type='checkbox'] {
+								width: 1.2rem;
+								height: 1.2rem;
+							}
+
+							.context_menu_button {
+								background: none;
+								border: none;
+								cursor: pointer;
+								padding: 0.5rem;
+								border-radius: 4px;
+								transition: background-color 0.2s;
+
+								&:hover {
+									background-color: #f0f0f0;
+								}
+
+								svg {
+									fill: #555;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
