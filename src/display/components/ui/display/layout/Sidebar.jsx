@@ -62,7 +62,7 @@ const Sidebar = () => {
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p>Order</p>
+								<p onClick={() => navigate("/order")}>Order</p>
 								</div>
 							</li>
 						</ul>
