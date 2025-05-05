@@ -62,7 +62,7 @@ const Sidebar = () => {
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p>Orders</p>
+									<p>Order</p>
 								</div>
 							</li>
 						</ul>

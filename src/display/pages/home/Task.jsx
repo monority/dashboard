@@ -26,6 +26,41 @@ const Task = () => {
 			status: 'Completed',
 			priority: 'Low',
 		},
+		{
+			id: 4,
+			title: 'Team Sync',
+			content: 'Weekly team sync to discuss project updates.',
+			status: 'In Progress',
+			priority: 'Medium',
+		},
+		{
+			id: 5,
+			title: 'Client Presentation',
+			content: 'Prepare slides for the client presentation on Q2 progress.',
+			status: 'Pending',
+			priority: 'High',
+		},
+		{
+			id: 6,
+			title: 'Code Review',
+			content: 'Review pull requests for the new feature branch.',
+			status: 'Completed',
+			priority: 'Low',
+		},
+		{
+			id: 7,
+			title: 'Database Migration',
+			content: 'Migrate the database to the new cloud provider.',
+			status: 'Pending',
+			priority: 'High',
+		},
+		{
+			id: 8,
+			title: 'UI Testing',
+			content: 'Perform end-to-end testing for the new UI components.',
+			status: 'In Progress',
+			priority: 'Medium',
+		},
 	];
 	const [active, setActive] = useState(false);
 	return (
