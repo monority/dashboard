@@ -1,8 +1,11 @@
 import React from 'react'
 import SmallBox from '../../components/ui/element/SmallBox'
 import Sales from '../../components/ui/element/Sales'
+import BlockChart from '../../components/ui/element/BlockChart'
 
 const Order = () => {
+	const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	const values = [25, 45, 65, 35, 80, 90, 100, 120, 150, 200, 250, 300];
 	return (
 		<>
 			<section className="order">
@@ -38,8 +41,21 @@ const Order = () => {
 							/>
 						</div>
 						<div className="wrapper_sales">
-						<Sales />
+							<Sales />
 
+						</div>
+						<div className="wrapper_graph">
+							<div className="element">
+								<BlockChart
+									values={values}
+									labels={labels}
+									title="Sales Overview"
+									desc="Sales overview for the last 7 days"
+								/>
+							</div>
+							<div className="element">
+
+							</div>
 						</div>
 					</div>
 
