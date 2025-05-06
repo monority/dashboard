@@ -17,4 +17,14 @@
 		flex-direction: column;
 		gap: 1.5rem;
 	}
+	.element_half{
+		flex-basis: 50%;
+	}
+	.wrapper_graph{
+		display: flex;
+		gap: 2rem;
+		@media (max-width: v.$lg_breakpoint) {
+			flex-direction: column;
+		}
+	}
 }

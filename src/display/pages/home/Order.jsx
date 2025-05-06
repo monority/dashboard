@@ -45,7 +45,7 @@ const Order = () => {
 
 						</div>
 						<div className="wrapper_graph">
-							<div className="element">
+							<div className="element_half">
 								<BlockChart
 									values={values}
 									labels={labels}
@@ -53,7 +53,7 @@ const Order = () => {
 									desc="Sales overview for the last 7 days"
 								/>
 							</div>
-							<div className="element">
+							<div className="element_half">
 
 							</div>
 						</div>
