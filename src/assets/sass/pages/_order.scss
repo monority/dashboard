@@ -1,3 +1,20 @@
+@use "../components/utils/variables" as v;
 .order{
-	
+	.container{
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.wrapper_line{
+		display: flex;
+		gap: 1.5rem;
+		@media (max-width: v.$lg_breakpoint) {
+			flex-direction: column;
+		}
+	}
+	.container_side{
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
 }

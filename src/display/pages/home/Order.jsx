@@ -1,10 +1,11 @@
 import React from 'react'
 import SmallBox from '../../components/ui/element/SmallBox'
+import Sales from '../../components/ui/element/Sales'
 
 const Order = () => {
 	return (
 		<>
-			<section className="task">
+			<section className="order">
 				<div className="container">
 					<div className="wrapper_column gap1">
 						<h1>Orders</h1>
@@ -35,6 +36,10 @@ const Order = () => {
 								desc="125"
 								value="45"
 							/>
+						</div>
+						<div className="wrapper_sales">
+						<Sales />
+
 						</div>
 					</div>
 

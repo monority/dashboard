@@ -1,15 +1,13 @@
+@use "../components/utils/variables" as v;
+
 .task {
 	padding: 2rem;
 
 	.container {
-
 		.wrapper_column {
 			display: flex;
 			flex-direction: column;
 			gap: 1.5rem;
-
-
-			
 
 			.task_table {
 				width: 100%;
@@ -51,22 +49,63 @@
 								width: 1.2rem;
 								height: 1.2rem;
 							}
-							.drop_menu{
+
+							.drop_menu {
 								position: absolute;
 								top: 0;
-								left: 0;
+								left: 2rem;
+								z-index: 1;
 							}
+
 							.context_menu_button {
 								background: none;
 								border: none;
 								cursor: pointer;
 								padding: 0.5rem;
 								border-radius: 4px;
-								transition: background-color 0.2s;	
+								transition: background-color 0.2s;
 								position: relative;
-					
+
 								svg {
 									fill: #555;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			@media (max-width: v.$lg_breakpoint) {
+				.task_table {
+					display: block;
+
+					thead {
+						display: none;
+					}
+
+					tbody {
+						display: block;
+
+						tr {
+							display: flex;
+							flex-direction: column;
+							margin-bottom: 1rem;
+							border: 1px solid #ddd;
+							border-radius: 8px;
+							background-color: #fff;
+
+							td {
+								display: flex;
+								justify-content: space-between;
+								padding: 0.8rem;
+								font-size: 1rem;
+								border-bottom: none;
+
+								&:before {
+									content: attr(data-label);
+									font-weight: bold;
+									color: #555;
+									margin-right: 1rem;
 								}
 							}
 						}

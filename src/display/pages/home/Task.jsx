@@ -62,7 +62,11 @@ const Task = () => {
 			priority: 'Medium',
 		},
 	];
-	const [active, setActive] = useState(false);
+	const [activeMenu, setActiveMenu] = useState(null);
+
+    const toggleMenu = (taskId) => {
+        setActiveMenu((prev) => (prev === taskId ? null : taskId));
+    };
 	return (
 		<>
 			<section className="task">
@@ -99,26 +103,31 @@ const Task = () => {
 								<tbody>
 									{tasks.map((task) => (
 										<tr key={task.id}>
-											<td>
+											<td data-label="Select">
 												<input type="checkbox" />
 											</td>
-											<td>{task.title}</td>
-											<td className='text_color01 bold'>{task.content}</td>
-											<td>{task.status}</td>
-											<td>{task.priority}</td>
-											<td>
+											<td data-label="Title">{task.title}</td>
+											<td data-label="Content" className="text_color01 bold">{task.content}</td>
+											<td data-label="Status">{task.status}</td>
+											<td data-label="Priority">{task.priority}</td>
+											<td data-label="Actions">
 												<div className="relative">
-													<button className="context_menu_button" onClick={() => setActive(!active)}>
+													<button
+														className="context_menu_button"
+														onClick={() => toggleMenu(task.id)}
+													>
 														<Icon type="menu" size="2rem" />
 													</button>
-													<div className={`${active ? "flex" : "none"} drop_menu standart_box	`}>
+													<div
+														className={`${activeMenu === task.id ? 'flex' : 'none'
+															} drop_menu standart_box`}
+													>
 														<ul className="drop_menu_list">
 															<li className="drop_menu_item">Edit</li>
 															<li className="drop_menu_item">Delete</li>
 														</ul>
 													</div>
 												</div>
-
 											</td>
 										</tr>
 									))}
