@@ -2,10 +2,13 @@ import React from 'react'
 import SmallBox from '../../components/ui/element/SmallBox'
 import Sales from '../../components/ui/element/Sales'
 import BlockChart from '../../components/ui/element/BlockChart'
+import Report from '../../components/ui/element/Report'
 
 const Order = () => {
 	const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	const values = [25, 45, 65, 35, 80, 90, 100, 120, 150, 200, 250, 300];
+	
+
 	return (
 		<>
 			<section className="order">
@@ -54,7 +57,7 @@ const Order = () => {
 								/>
 							</div>
 							<div className="element_half">
-
+								<Report />
 							</div>
 						</div>
 					</div>
