@@ -85,7 +85,7 @@ const Sidebar = () => {
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p>Mail</p>
+									<p>Types</p>
 								</div>
 							</li>
 							<li className={`${selected && 'selected'} text_size2`}>
