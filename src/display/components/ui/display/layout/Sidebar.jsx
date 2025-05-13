@@ -6,81 +6,93 @@ import Button from '../../../utils/base/Button';
 import { useNavigate } from 'react-router-dom';
 const Sidebar = () => {
 	const navigate = useNavigate();
-	const [selected, setSelected] = useState(false);
+	const [selected, setSelected] = useState("dashboard");
 	return (
 		<>
 			<div id="sidebar">
 				<div className="container">
 					<div className="wrapper box">
 						<div className="element">
-							<p className='text_size2'>Very long username</p>
+							<p className=''>Very long username</p>
 						</div>
 						<div className="element">
-							<p className='text_color02 text_size2'>Email@example.com</p>
+							<p className='text_color02 '>Email@example.com</p>
 						</div>
 					</div>
 					<div className="wrapper">
-					<Input
-									type="text"
-									inputClassName="input_search"
-									placeholder='Search'
-									icon={<Icon type="search" size="2rem" />}
-								/>					</div>
+						<Input
+							type="text"
+							inputClassName="input_search"
+							placeholder='Search'
+							icon={<Icon type="search" size="2rem" />}
+						/>					</div>
 					<div className="wrapper">
 						<div className="element">
-							<h4>Title</h4>
+							<h2>Main</h2>
 						</div>
 						<ul className="sidebar__menu">
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "dashboard" ? "selected" : ""}
+								onClick={() => { setSelected("dashboard"); navigate("/dashboard"); }}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p onClick={() => navigate("/dashboard")}>Dashboard</p>
+									<p>Dashboard</p>
 								</div>
 							</li>
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "mail" ? "selected" : ""}
+								onClick={() => { setSelected("mail"); navigate("/mail"); }}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-								<p onClick={() => navigate("/mail")}>Mail</p>
-
+									<p>Mail</p>
 								</div>
 							</li>
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "task" ? "selected" : ""}
+								onClick={() => { setSelected("task"); navigate("/task"); }}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-								<p onClick={() => navigate("/task")}>Task</p>
+									<p>Task</p>
 								</div>
 							</li>
-
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "order" ? "selected" : ""}
+								onClick={() => { setSelected("order"); navigate("/order"); }}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-								<p onClick={() => navigate("/order")}>Order</p>
+									<p>Order</p>
 								</div>
 							</li>
 						</ul>
-					</div>
-					<div className="wrapper">
-						<div className="element">
-							<h4>SubTitle</h4>
-						</div>
+
 						<ul className="sidebar__menu">
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "reviews" ? "selected" : ""}
+								onClick={() => { setSelected("reviews"); navigate("/reviews"); }}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
 								<div className="element">
-									<p>Customers</p>
+									<p>Reviews</p>
 								</div>
 							</li>
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "types" ? "selected" : ""}
+								onClick={() => setSelected("types")}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
@@ -88,7 +100,10 @@ const Sidebar = () => {
 									<p>Types</p>
 								</div>
 							</li>
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "support" ? "selected" : ""}
+								onClick={() => setSelected("support")}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>
@@ -96,7 +111,10 @@ const Sidebar = () => {
 									<p>Support</p>
 								</div>
 							</li>
-							<li className={`${selected && 'selected'} text_size2`}>
+							<li
+								className={selected === "settings" ? "selected" : ""}
+								onClick={() => setSelected("settings")}
+							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
 								</div>

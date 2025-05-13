@@ -8,6 +8,7 @@ import Dashboard from './display/pages/home/Dashboard';
 import Mail from './display/pages/home/Mail';
 import Task from './display/pages/home/Task';
 import Order from './display/pages/home/Order';
+import Reviews from './display/pages/home/Reviews';
 
 const Root = () => {
 	return (
@@ -21,6 +22,7 @@ const Root = () => {
 					<Route path="/mail" element={<Mail />} />
 					<Route path="/order" element={<Order />} />
 					<Route path="/task" element={<Task />} />
+					<Route path="/reviews" element={<Reviews />} />
 				</Routes>
 			</MainContainer>
 		</BrowserRouter>
