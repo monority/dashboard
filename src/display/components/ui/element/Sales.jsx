@@ -2,7 +2,6 @@ import React from 'react'
 import Image from '../../../components/utils/base/Image'
 
 const Sales = ({ users = [] }) => {
-	// Default data if no users are provided
 	const defaultUsers = [
 		{
 			id: 1,
