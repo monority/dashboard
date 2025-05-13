@@ -22,7 +22,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		color: var(--text_color02);
-		padding: 0.1rem;
+		padding: 0.4rem 0.8rem;
 		border-radius: 0.75rem;
 		font-size: 1.65rem;
 	}
@@ -33,8 +33,8 @@
 	}
 
 	.selected {
-		background-color: var(--bg_color03);
-		color: var(--text_color01);
+		background-color: var(--bg_color02	);
+		color: var(--text_color03);
 	}
 	.sidebar__menu{
 		display: flex;

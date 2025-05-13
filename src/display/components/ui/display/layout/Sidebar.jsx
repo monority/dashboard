@@ -102,7 +102,7 @@ const Sidebar = () => {
 							</li>
 							<li
 								className={selected === "support" ? "selected" : ""}
-								onClick={() => setSelected("support")}
+								onClick={() => { setSelected("support"); navigate("/support"); }}
 							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />
@@ -113,7 +113,7 @@ const Sidebar = () => {
 							</li>
 							<li
 								className={selected === "settings" ? "selected" : ""}
-								onClick={() => setSelected("settings")}
+								onClick={() => { setSelected("settings"); navigate("/settings"); }}
 							>
 								<div className="element">
 									<Icon type="home" size='1.5rem' />

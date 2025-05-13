@@ -9,6 +9,8 @@ import Mail from './display/pages/home/Mail';
 import Task from './display/pages/home/Task';
 import Order from './display/pages/home/Order';
 import Reviews from './display/pages/home/Reviews';
+import Support from './display/pages/home/Support';
+import Settings from './display/pages/home/Settings';
 
 const Root = () => {
 	return (
@@ -23,6 +25,8 @@ const Root = () => {
 					<Route path="/order" element={<Order />} />
 					<Route path="/task" element={<Task />} />
 					<Route path="/reviews" element={<Reviews />} />
+					<Route path="/support" element={<Support />} />
+					<Route path="/settings" element={<Settings />} />
 				</Routes>
 			</MainContainer>
 		</BrowserRouter>
