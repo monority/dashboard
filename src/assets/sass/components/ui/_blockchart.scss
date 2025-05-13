@@ -1,74 +1,74 @@
 .chart-container {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 
 }
 
 
 .chart {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 	background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	padding: 1.5rem;
-    height: 250px;
 }
 
 .chart_wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .block_wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	height: 100%;
 	gap: 1rem;
-    width: 100%;
+	width: 100%;
+	overflow: visible;
 }
 
 .bar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 40px;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	width: 40px;
+	height: 100%;
 }
-  
+
 .bar {
-    width: 100%;
-    background-color: #3b82f6;
-    border-radius: 6px 6px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    transition: 0.3s ease;
-    color: white;
-    font-size: 0.75rem;
-    padding-bottom: 5px;
+	width: 100%;
+	background-color: #3b82f6;
+	border-radius: 6px 6px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	transition: 0.3s ease;
+	color: white;
+	font-size: 1rem;
+	padding-bottom: 5px;
 }
-  
+
 .bar:hover {
-    background-color: #2563eb;
+	background-color: #2563eb;
 }
-  
+
 .labels {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 1rem;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	margin-top: 1rem;
 }
-  
+
 .label {
-    width: 40px;
-    text-align: center;
-    color: #555;
-    font-size: 0.85rem;
+	width: 40px;
+	text-align: center;
+	color: #555;
+	font-size: 1.2rem;
 }

@@ -26,7 +26,7 @@ const BlockChart = ({ values, labels, title, desc }) => {
 							<div key={i} className="bar-container">
 								<div
 									className="bar"
-									style={{ height: `${value}%` }}
+									style={{ height: `${value}px` }}
 								>
 									<span>{value}</span>
 								</div>
