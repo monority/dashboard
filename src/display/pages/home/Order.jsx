@@ -30,6 +30,12 @@ const Order = () => {
 			name: "Alice Johnson",
 			email: "alice.johnson@example.com",
 		},
+		{
+			id: 4,
+			avatar: <img src="https://via.placeholder.com/40" alt="User Avatar" className="avatar" />,
+			name: "Marc devis",
+			email: "marc.devis@example.com",
+		},
 	];
 
 	return (
@@ -79,32 +85,39 @@ const Order = () => {
 								/>
 							</div>
 							<div className="element_half">
-								<div className="wrapper">
-									<div className="element">
-										<h1>Share this document</h1>
-									</div>
-									<div className="element">
-										<p>Anyone with this link can view this document.</p>
-									</div>
+								<div className="box_graph report_box">
 									<div className="wrapper">
 										<div className="element">
-											<Input type="text" placeholder="https://example.com" />
+											<h1>Share this document</h1>
 										</div>
 										<div className="element">
-											<Button variant="primary" size="large" className="btn_full">Copy link</Button>
+											<p>Anyone with this link can view this document.</p>
 										</div>
+										<div className="wrapper">
+											<div className="element">
+												<Input type="text" inputClassName="input_search"
+													placeholder="https://example.com" />
+											</div>
+											<div className="element">
+												<Button variant="primary" size="large" className="btn_full">Copy link</Button>
+											</div>
+										</div>
+
+									</div>
+									<div className="reports">
+										{reportData.map((user) => (
+											<Report
+												key={user.id}
+												avatar={user.avatar}
+												name={user.name}
+												email={user.email}
+											/>
+										))}
 									</div>
 
 								</div>
-								{reportData.map((user) => (
-									<Report
-										key={user.id}
-										avatar={user.avatar}
-										name={user.name}
-										email={user.email}
-									/>
-								))}
 							</div>
+
 						</div>
 					</div>
 				</div>

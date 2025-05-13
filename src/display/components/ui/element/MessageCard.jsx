@@ -58,7 +58,7 @@ const MessageCard = ({ avatar, fullname, email, text01, text02, text03, text04 }
 
 				<div className="wrapper_bottom">
 					<div className="element input_container">
-						<Input name="type" type="text" placeholder="Type a message..." className="input_message" />
+						<Input name="type" type="text" placeholder="Type a message..." inputClassName="input_search" />
 					</div>
 					<div className="element_send">
 						<Button type="primary" size="small" className="btn_send">Send</Button>

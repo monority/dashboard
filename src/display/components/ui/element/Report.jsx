@@ -14,7 +14,7 @@ const Report = ({ avatar, name, email }) => {
 	return (
 		<>
 			<div className="report">
-				<div className="container">
+				<div className="container_def">
 
 					<div className="wrapper_between">
 						<div className="wrapper">
