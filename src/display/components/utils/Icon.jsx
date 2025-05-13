@@ -25,9 +25,9 @@ const Icon = ({ type, size = "2rem", action }) => {
 					</g>
 				</svg>
 			);
-		case 'project':
+		case 'female':
 			return (
-				<svg cursor='pointer' fill="currentColor" width={size} height={size} viewBox="0 0 12.00 12.00" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" stroke="#000000" strokeWidth="0.462"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.7"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M1,5H5V1H1Zm0,6H5V7H1Zm6,0h4V7H7ZM7,1V5h4V1Z"></path> </g> </g></svg>
+				<svg height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path class="st0" d="M463.212,422.569l-3.82-24.35c-3.203-20.417-16.035-38.042-34.48-47.361l-80.472-40.693 c-10.813-5.46-13.678-22.243-13.678-22.243c-0.674-1.096-1.939-1.686-3.213-1.488c-1.274,0.188-2.309,1.113-2.637,2.359 l-9.43,36.254l-59.48,118.801l-59.484-118.801l-9.432-36.254c-0.326-1.246-1.362-2.172-2.637-2.359 c-1.274-0.197-2.537,0.392-3.211,1.488c0,0-2.865,16.783-13.68,22.243l-80.47,40.693c-18.442,9.319-31.272,26.944-34.475,47.361 l-3.826,24.35c-1.364,8.692,0.436,21.448,8.222,27.825C67.419,458.907,105.872,512,256.001,512 c150.123,0,188.574-53.093,198.988-61.606C462.78,444.017,464.579,431.261,463.212,422.569z"></path> <path class="st0" d="M158.091,165.732c17.582-19.181,80.906-40.103,126.072-113.491c16.65,30.279,54.971,106.363,68.93,115.083 l7.764-60.632C365.812,44.768,315.278,0,256.001,0c-59.283,0-109.814,44.768-104.86,106.692L158.091,165.732z"></path> </g> </g></svg>
 			);
 		case 'project':
 			return (
