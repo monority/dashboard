@@ -20,10 +20,10 @@ const Reviews = () => {
 						<div className="wrapper_between">
 							<div className="element_column">
 								<div className="element">
-
+									<h2>Total reviews</h2>
 								</div>
 								<div className="element">
-
+									<p>+ 5k</p>
 								</div>
 								<div className="element">
 
