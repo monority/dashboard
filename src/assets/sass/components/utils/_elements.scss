@@ -120,3 +120,14 @@ width: 100%;
 	border-radius: 0.75rem;
 	border:var(--border_color01	);
 }
+
+.badge{
+	background-color: var(--bg_color01);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-size: 1.3rem;
+	color: var(--text_color03);
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+}

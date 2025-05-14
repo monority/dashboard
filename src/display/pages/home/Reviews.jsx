@@ -1,4 +1,5 @@
 import React from 'react'
+import Badge from '../../components/ui/element/Badges'
 
 const Reviews = () => {
 	return (
@@ -24,6 +25,7 @@ const Reviews = () => {
 								</div>
 								<div className="element">
 									<p>+ 5k</p>
+									<Badge label="21%" colorBadge="green" />
 								</div>
 								<div className="element">
 
