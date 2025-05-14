@@ -25,7 +25,7 @@ const Reviews = () => {
 								</div>
 								<div className="element">
 									<p>+ 5k</p>
-									<Badge label="21%" colorBadge="green" />
+									<Badge colorBadge="success_light" label="21%"  />
 								</div>
 								<div className="element">
 
