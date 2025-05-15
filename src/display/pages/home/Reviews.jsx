@@ -18,17 +18,40 @@ const Reviews = () => {
 
 					</div>
 					<div className="container">
-						<div className="wrapper_between">
-							<div className="element_column">
+						<div className="wrapper_responsive">
+							<div className="element_column gap2">
 								<div className="element">
 									<h2>Total reviews</h2>
 								</div>
-								<div className="element">
+								<div className="element_row gap2">
 									<p>+ 5k</p>
 									<Badge colorBadge="success_light" label="21%"  />
 								</div>
 								<div className="element">
-
+									<p className='text_color02'>Total growth this year</p>
+								</div>
+							</div>
+							<div className="element_column gap2">
+								<div className="element">
+									<h2>Average Rating</h2>
+								</div>
+								<div className="element_row gap2">
+									<p>4.5</p>
+								</div>
+								<div className="element">
+									<p className='text_color02'>Average rating this year</p>
+								</div>
+							</div>
+							<div className="element_column gap2">
+								<div className="element">
+									<h2>Total reviews</h2>
+								</div>
+								<div className="element_row gap2">
+									<p>+ 5k</p>
+									<Badge colorBadge="success_light" label="21%"  />
+								</div>
+								<div className="element">
+									<p className='text_color02'>Total growth this year</p>
 								</div>
 							</div>
 						</div>
