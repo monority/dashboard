@@ -9,7 +9,7 @@ const Reviews = () => {
 			totalReviews: 12,
 			rating: 5,
 			date: "2025-03-12",
-			text: "Super service, livraison rapide et produit conforme à la description. Je recommande !",
+			text: "Excellent service! The delivery was very fast and the product matched the description perfectly. I am extremely satisfied and will definitely order again. Highly recommended for anyone looking for quality and reliability.",
 			favorite: false,
 		},
 		{
@@ -18,7 +18,7 @@ const Reviews = () => {
 			totalReviews: 3,
 			rating: 4,
 			date: "2025-02-27",
-			text: "Bon rapport qualité/prix. Service client réactif.",
+			text: "Good value for money. The customer service was responsive and helpful when I had questions about my order. The product works well, though the packaging could be improved. Overall, a positive experience.",
 			favorite: true,
 		},
 		{
@@ -27,7 +27,7 @@ const Reviews = () => {
 			totalReviews: 20,
 			rating: 5,
 			date: "2025-01-15",
-			text: "Toujours satisfaite de mes commandes, merci !",
+			text: "I am always satisfied with my orders from this shop. The products are consistently high quality and the support team is always ready to help. Thank you for making online shopping so easy and pleasant!",
 			favorite: false,
 		},
 		{
@@ -36,15 +36,14 @@ const Reviews = () => {
 			totalReviews: 1,
 			rating: 3,
 			date: "2024-12-02",
-			text: "Livraison un peu longue mais produit correct.",
+			text: "The delivery took a bit longer than expected, but the product itself was decent and matched the description. Communication could be improved, but overall I am satisfied with my purchase.",
 			favorite: false,
 		},
 	]
-	
-const renderStars = (count) =>
-  <span style={{ color: "#FFD700", fontSize: "1.1em" }}>
-    {"★".repeat(count) + "☆".repeat(5 - count)}
-  </span>
+	const renderStars = (count) =>
+		<span style={{ color: "#FFD700", fontSize: "1.1em" }}>
+			{"★".repeat(count) + "☆".repeat(5 - count)}
+		</span>
 
 	return (
 		<>
@@ -69,7 +68,7 @@ const renderStars = (count) =>
 								</div>
 								<div className="element_row gap2">
 									<p>+ 5k</p>
-									<Badge colorBadge="success_light" label="21%" />
+									<Badge colorBadge="success_light" label="21%" icon="true" />
 								</div>
 								<div className="element">
 									<p className='text_color02'>Total growth this year</p>
@@ -121,58 +120,66 @@ const renderStars = (count) =>
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 						<div className="element_column gap2">
-								<div className="element">
-									<h2>Reviews</h2>
-								</div>
-								<div className="element_column gap1">
-									{fakeReviews.map((review, idx) => (
-										<div className="review-card" key={idx} style={{
-											border: "1px solid #eee",
-											borderRadius: 8,
-											padding: "1rem",
-											marginBottom: "1rem",
-											background: "#fff",
-											boxShadow: "0 1px 4px 0 #0001"
-										}}>
-											<div className="review-header" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: 4 }}>
-												<strong>{review.name}</strong>
-												<Badge label={`Dépensé: ${review.totalSpend}`} className="badge badge_info" />
-												<Badge label={`Avis: ${review.totalReviews}`} className="badge badge_secondary" />
-												<span style={{ marginLeft: "auto", fontSize: "0.9em", color: "#888" }}>
-													{new Date(review.date).toLocaleDateString()}
-												</span>
-											</div>
-											<div className="review-rating" style={{ marginBottom: 4 }}>
-												{renderStars(review.rating)}
-											</div>
-											<div className="review-text" style={{ fontSize: "0.95em", marginBottom: 8 }}>
-												{review.text}
-											</div>
-											<div className="review-actions" style={{ display: "flex", gap: "0.5rem" }}>
-												<button className="btn btn-sm btn-primary">Direct message</button>
-												<button className="btn btn-sm btn-fav" title="Favori" style={{
-													background: review.favorite ? "#ffb6b6" : "#eee",
-													color: review.favorite ? "#e57373" : "#888",
-													border: "none",
-													borderRadius: "50%",
-													width: 28,
-													height: 28,
-													display: "flex",
-													alignItems: "center",
-													justifyContent: "center",
-													fontSize: "1.1em",
-													cursor: "pointer"
-												}}>
-													<span role="img" aria-label="heart">♥</span>
-												</button>
-											</div>
-										</div>
-									))}
-								</div>
+							<div className="element">
+								<h2>Reviews</h2>
 							</div>
+							<div
+								className="element_column gap1 reviews-scroll"
+								style={{
+									maxHeight: "50rem",
+									overflowY: "auto",
+									paddingRight: "8px"
+								}}
+							>
+								{fakeReviews.map((review, idx) => (
+									<div className="review-card" key={idx} style={{
+										border: "1px solid #eee",
+										borderRadius: 8,
+										padding: "1rem",
+										marginBottom: "1rem",
+										background: "#fff",
+										boxShadow: "0 1px 4px 0 #0001"
+									}}>
+										{/* ...existing review content... */}
+										<div className="review-header" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: 4 }}>
+											<strong>{review.name}</strong>
+											<Badge label={`Dépensé: ${review.totalSpend}`} colorBadge="info" />
+											<Badge label={`Avis: ${review.totalReviews}`} colorBadge="secondary" />
+											<span style={{ marginLeft: "auto", fontSize: "0.9em", color: "#888" }}>
+												{new Date(review.date).toLocaleDateString()}
+											</span>
+										</div>
+										<div className="review-rating" style={{ marginBottom: 4 }}>
+											{renderStars(review.rating)}
+										</div>
+										<div className="review-text" style={{ fontSize: "0.95em", marginBottom: 8 }}>
+											{review.text}
+										</div>
+										<div className="review-actions" style={{ display: "flex", gap: "0.5rem" }}>
+											<button className="btn btn-sm btn-primary">Direct message</button>
+											<button className="btn btn-sm btn-fav" title="Favori" style={{
+												background: review.favorite ? "#ffb6b6" : "#eee",
+												color: review.favorite ? "#e57373" : "#888",
+												border: "none",
+												borderRadius: "50%",
+												width: 28,
+												height: 28,
+												display: "flex",
+												alignItems: "center",
+												justifyContent: "center",
+												fontSize: "1.1em",
+												cursor: "pointer"
+											}}>
+												<span role="img" aria-label="heart">♥</span>
+											</button>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
