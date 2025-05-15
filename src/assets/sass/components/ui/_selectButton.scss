@@ -4,6 +4,7 @@
 }
 
 .select-button {
+	display: flex;
 	padding-inline: 2rem;
     border: var(--border_color01);
 	border-radius: 0.5rem;

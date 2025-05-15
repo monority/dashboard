@@ -89,17 +89,7 @@ const Sidebar = () => {
 									<p>Reviews</p>
 								</div>
 							</li>
-							<li
-								className={selected === "types" ? "selected" : ""}
-								onClick={() => setSelected("types")}
-							>
-								<div className="element">
-									<Icon type="home" size='1.5rem' />
-								</div>
-								<div className="element">
-									<p>Types</p>
-								</div>
-							</li>
+						z
 							<li
 								className={selected === "support" ? "selected" : ""}
 								onClick={() => { setSelected("support"); navigate("/support"); }}

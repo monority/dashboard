@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import Icon from '../Icon';
 
-const Input = ({ type, initialValue, name, defValue, placeholder, icon, className = '', inputClassName }) => {
-	const [value, setValue] = useState(initialValue || defValue || '');
+const Input = ({ type, initialValue, name, defValue, placeholder, icon, className = '', inputClassName, maxWidth }) => {
+	const getDefaultValue = () => {
+		if (type === 'date' && !initialValue && !defValue) {
+			const today = new Date();
+			return today.toISOString().split('T')[0];
+		}
+		return initialValue || defValue || '';
+	};
+
+	const [value, setValue] = useState(getDefaultValue());
 	const [isFocused, setIsFocused] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -27,7 +35,10 @@ const Input = ({ type, initialValue, name, defValue, placeholder, icon, classNam
 	};
 
 	return (
-		<div className={`form_element relative ${className}`}>
+		<div
+			className={`form_element relative ${className}`}
+			style={maxWidth ? { maxWidth } : undefined}
+		>
 			<div className="input_wrapper">
 				{icon && <>{icon}</>}
 				<input
@@ -49,7 +60,6 @@ const Input = ({ type, initialValue, name, defValue, placeholder, icon, classNam
 				>
 				</label>
 			</div>
-
 			{isPassword && (
 				<button
 					type="button"
@@ -65,6 +75,5 @@ const Input = ({ type, initialValue, name, defValue, placeholder, icon, classNam
 			)}
 		</div>
 	);
-};
-
+}
 export default Input;
