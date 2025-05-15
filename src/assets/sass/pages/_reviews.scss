@@ -1,3 +1,47 @@
-.reviews{
-	
+@use "../components/utils/variables" as v;
+
+.reviews {
+	.wrapper_responsive {
+		display: flex;
+		justify-content: space-around;
+
+		@media (max-width: v.$lg_breakpoint) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+.votes-bars {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.vote-bar-row {
+  display: flex;
+  align-items: center;
+}
+.vote-bar-label {
+  width: 14px;
+  font-size: 0.85em;
+  text-align: right;
+  margin-right: 6px;
+  color: #888;
+}
+.vote-bar {
+  height: 12px;
+  border-radius: 6px;
+  margin-right: 8px;
+  transition: width 0.3s;
+}
+.vote-bar-1 { width: 28px; background: #e57373; }
+.vote-bar-2 { width: 40px; background: #ffb74d; }
+.vote-bar-3 { width: 56px; background: #fff176; }
+.vote-bar-4 { width: 84px; background: #81c784; }
+.vote-bar-5 { width: 126px; background: #64b5f6; }
+.vote-bar-count {
+  min-width: 22px;
+  font-size: 0.85em;
+  color: #444;
+}
 }
