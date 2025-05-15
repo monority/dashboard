@@ -2,6 +2,50 @@ import React from 'react'
 import Badge from '../../components/ui/element/Badges'
 
 const Reviews = () => {
+	const fakeReviews = [
+		{
+			name: "Alice Dupont",
+			totalSpend: "€1,250",
+			totalReviews: 12,
+			rating: 5,
+			date: "2025-03-12",
+			text: "Super service, livraison rapide et produit conforme à la description. Je recommande !",
+			favorite: false,
+		},
+		{
+			name: "Jean Martin",
+			totalSpend: "€320",
+			totalReviews: 3,
+			rating: 4,
+			date: "2025-02-27",
+			text: "Bon rapport qualité/prix. Service client réactif.",
+			favorite: true,
+		},
+		{
+			name: "Sophie Bernard",
+			totalSpend: "€2,100",
+			totalReviews: 20,
+			rating: 5,
+			date: "2025-01-15",
+			text: "Toujours satisfaite de mes commandes, merci !",
+			favorite: false,
+		},
+		{
+			name: "Lucas Petit",
+			totalSpend: "€150",
+			totalReviews: 1,
+			rating: 3,
+			date: "2024-12-02",
+			text: "Livraison un peu longue mais produit correct.",
+			favorite: false,
+		},
+	]
+	
+const renderStars = (count) =>
+  <span style={{ color: "#FFD700", fontSize: "1.1em" }}>
+    {"★".repeat(count) + "☆".repeat(5 - count)}
+  </span>
+
 	return (
 		<>
 			<section className="reviews">
@@ -48,7 +92,7 @@ const Reviews = () => {
 								</div>
 							</div>
 							<div className="element_column gap2">
-			
+
 								<div className="element votes-bars">
 									<div className="vote-bar-row">
 										<span className="vote-bar-label">5</span>
@@ -77,7 +121,58 @@ const Reviews = () => {
 									</div>
 								</div>
 							</div>
+							
 						</div>
+						<div className="element_column gap2">
+								<div className="element">
+									<h2>Reviews</h2>
+								</div>
+								<div className="element_column gap1">
+									{fakeReviews.map((review, idx) => (
+										<div className="review-card" key={idx} style={{
+											border: "1px solid #eee",
+											borderRadius: 8,
+											padding: "1rem",
+											marginBottom: "1rem",
+											background: "#fff",
+											boxShadow: "0 1px 4px 0 #0001"
+										}}>
+											<div className="review-header" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: 4 }}>
+												<strong>{review.name}</strong>
+												<Badge label={`Dépensé: ${review.totalSpend}`} className="badge badge_info" />
+												<Badge label={`Avis: ${review.totalReviews}`} className="badge badge_secondary" />
+												<span style={{ marginLeft: "auto", fontSize: "0.9em", color: "#888" }}>
+													{new Date(review.date).toLocaleDateString()}
+												</span>
+											</div>
+											<div className="review-rating" style={{ marginBottom: 4 }}>
+												{renderStars(review.rating)}
+											</div>
+											<div className="review-text" style={{ fontSize: "0.95em", marginBottom: 8 }}>
+												{review.text}
+											</div>
+											<div className="review-actions" style={{ display: "flex", gap: "0.5rem" }}>
+												<button className="btn btn-sm btn-primary">Direct message</button>
+												<button className="btn btn-sm btn-fav" title="Favori" style={{
+													background: review.favorite ? "#ffb6b6" : "#eee",
+													color: review.favorite ? "#e57373" : "#888",
+													border: "none",
+													borderRadius: "50%",
+													width: 28,
+													height: 28,
+													display: "flex",
+													alignItems: "center",
+													justifyContent: "center",
+													fontSize: "1.1em",
+													cursor: "pointer"
+												}}>
+													<span role="img" aria-label="heart">♥</span>
+												</button>
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
 					</div>
 				</div>
 			</section>
