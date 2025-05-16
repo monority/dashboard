@@ -33,6 +33,9 @@ const Icon = ({ type, size = "2rem", action }) => {
 			return (
 				<svg fill="currentColor" width={size} height={size} viewBox="0 0 24 24" id="up-trend" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="primary" d="M21,5H17a1,1,0,0,0,0,2h1.59L14,11.59l-2.29-2.3a1,1,0,0,0-1.42,0l-8,8a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L11,11.41l2.29,2.3a1,1,0,0,0,1.42,0L20,8.41V10a1,1,0,0,0,2,0V6A1,1,0,0,0,21,5Z" style={{ fill: "currentcolor" }}></path></g></svg>
 			);
+		case 'downgraph':
+			return (
+				<svg fill="currentColor" width={size} height={size} viewBox="0 0 24 24" id="down-trend-round" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="primary" d="M21,12a1,1,0,0,0-1,1v1.59L14.91,9.5a2,2,0,0,0-2.82,0L9.5,12.09,3.71,6.29A1,1,0,0,0,2.29,7.71l5.8,5.79a2,2,0,0,0,2.82,0l2.59-2.59L18.59,16H17a1,1,0,0,0,0,2h4a1,1,0,0,0,1-1V13A1,1,0,0,0,21,12Z" style={{ fill: "currentcolor" }}></path></g></svg>);
 
 		case 'project':
 			return (
