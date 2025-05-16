@@ -1,6 +1,7 @@
 import React from 'react'
 import SelectButton from '../../components/utils/base/SelectButton'
 import Input from '../../components/utils/base/Input';
+import Badge from '../../components/ui/element/Badges';
 
 const Support = () => {
 	const options = [
@@ -53,38 +54,43 @@ const Support = () => {
 										<h5>Date</h5>
 									</div>
 									<div className="element">
-										<Input type="date" placeholder='Enter your subject' inputClassName="input_search" maxWidth="20rem"  />
+										<Input type="date" placeholder='Enter your subject' inputClassName="input_search" maxWidth="20rem" />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="box_graph">
+						<div className="box_graph wrapper_between">
 							<div className="wrapper">
 								<div className="element"><h3>Number of issues</h3></div>
-								<div className="element"></div>
-								<div className="element"></div>
+								<div className="element"><p className='text_color02'>this month</p></div>
+								<div className="element"><p>153</p>
+								<Badge colorBadge="success_light" label="10%" icon="true" /></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Issues solved</h3></div>
-								<div className="element"></div>
+								<div className="element"><p className='text_color02'>this month</p></div>
+
 								<div className="element"></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Avg. response time</h3></div>
-								<div className="element"></div>
+								<div className="element"><p className='text_color02'>in last 7 days</p></div>
+
 								<div className="element"></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Client satisfaction</h3></div>
-								<div className="element"></div>
+								<div className="element"><p className='text_color02'>in last 7 days</p></div>
+
 								<div className="element"></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Open tickets</h3></div>
-								<div className="element"></div>
+								<div className="element"><p className='text_color02'>in last project</p></div>
+
 								<div className="element"></div>
 							</div>
-						
+
 						</div>
 					</div>
 				</div>

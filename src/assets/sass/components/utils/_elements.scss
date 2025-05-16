@@ -122,12 +122,13 @@ width: 100%;
 }
 
 .badge{
-	padding: 0.15rem 0.45rem;
+	padding: 0.15rem 0.65rem;
 	border-radius: 0.5rem;
 	font-size: 1.2rem;
 	display: flex;
 	align-items: center;
 	column-gap: 0.5rem;
+	width: fit-content;
 }
 .badge_success_light{
 	background-color: var(--color_success_light);
