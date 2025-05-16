@@ -76,7 +76,7 @@ const Support = () => {
 								<div className="element"><h3>Avg. response time</h3></div>
 								<div className="element"><p className='text_color02'>in last 7 days</p></div>
 
-								<div className="flex row gap1"><p>92%</p> <Badge colorBadge="success_light" label="10%" icon="true" /></div>
+								<div className="flex row gap1"><p>92%</p> <Badge colorBadge="negative" label="2%" iconRed="true" /></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Client satisfaction</h3></div>
