@@ -132,11 +132,15 @@ width: 100%;
 }
 .badge_success_light{
 	background-color: var(--color_success_light);
-	color: var(--text_color01);
+	color: var(--text_success_light);
 }
 .badge_info {
   background-color: var(--color_info_light, #e3f2fd);
   color: var(--color_info_dark, #1976d2);
+}
+.badge_negative {
+  background-color: var(--color_negative);
+  color: var(--text_negative);
 }
 
 .badge_secondary {

@@ -63,32 +63,32 @@ const Support = () => {
 							<div className="wrapper">
 								<div className="element"><h3>Number of issues</h3></div>
 								<div className="element"><p className='text_color02'>this month</p></div>
-								<div className="element"><p>153</p>
-								<Badge colorBadge="success_light" label="10%" icon="true" /></div>
+								<div className="flex row gap1"><p>153</p>
+									<Badge colorBadge="success_light" label="10%" icon="true" /></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Issues solved</h3></div>
 								<div className="element"><p className='text_color02'>this month</p></div>
 
-								<div className="element"></div>
+								<div className="element">55</div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Avg. response time</h3></div>
 								<div className="element"><p className='text_color02'>in last 7 days</p></div>
 
-								<div className="element"></div>
+								<div className="flex row gap1"><p>92%</p> <Badge colorBadge="success_light" label="10%" icon="true" /></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Client satisfaction</h3></div>
 								<div className="element"><p className='text_color02'>in last 7 days</p></div>
 
-								<div className="element"></div>
+								<div className="flex row gap1">90% 	<Badge colorBadge="success_light" label="10%" icon="true" /></div>
 							</div>
 							<div className="wrapper">
 								<div className="element"><h3>Open tickets</h3></div>
 								<div className="element"><p className='text_color02'>in last project</p></div>
 
-								<div className="element"></div>
+								<div className="element">204</div>
 							</div>
 
 						</div>
