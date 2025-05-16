@@ -58,6 +58,34 @@ const Support = () => {
 								</div>
 							</div>
 						</div>
+						<div className="box_graph">
+							<div className="wrapper">
+								<div className="element"><h3>Number of issues</h3></div>
+								<div className="element"></div>
+								<div className="element"></div>
+							</div>
+							<div className="wrapper">
+								<div className="element"><h3>Issues solved</h3></div>
+								<div className="element"></div>
+								<div className="element"></div>
+							</div>
+							<div className="wrapper">
+								<div className="element"><h3>Avg. response time</h3></div>
+								<div className="element"></div>
+								<div className="element"></div>
+							</div>
+							<div className="wrapper">
+								<div className="element"><h3>Client satisfaction</h3></div>
+								<div className="element"></div>
+								<div className="element"></div>
+							</div>
+							<div className="wrapper">
+								<div className="element"><h3>Open tickets</h3></div>
+								<div className="element"></div>
+								<div className="element"></div>
+							</div>
+						
+						</div>
 					</div>
 				</div>
 
