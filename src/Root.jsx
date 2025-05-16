@@ -19,8 +19,7 @@ const Root = () => {
 			<MainContainer>
 				<Header />
 				<Routes>
-					<Route path="/" element={<App />} />
-					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/" element={<Dashboard />} />
 					<Route path="/mail" element={<Mail />} />
 					<Route path="/order" element={<Order />} />
 					<Route path="/task" element={<Task />} />
