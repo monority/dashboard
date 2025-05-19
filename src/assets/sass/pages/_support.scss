@@ -1,0 +1,13 @@
+@use "../components/utils/variables" as v;
+
+.support {
+	.wrapper_stats {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+		@media (min-width: v.$md_breakpoint) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
