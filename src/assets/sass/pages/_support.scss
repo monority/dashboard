@@ -8,6 +8,14 @@
 		@media (min-width: v.$md_breakpoint) {
 			display: flex;
 			justify-content: space-between;
+			flex-direction: row;
 		}
+		
 	}
+	.wrapper_bottom{
+			display: flex;
+			.fag,.history{
+				flex-basis: 50%;
+			}
+		}
 }

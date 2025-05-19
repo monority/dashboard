@@ -92,6 +92,19 @@ const Support = () => {
 						</div>
 
 					</div>
+					<div className="wrapper_bottom">
+						<div className="fag box_graph">
+							<div className="element">
+								<h3>Frequently asked questions</h3>
+							</div>
+						</div>
+						<div className="history box_graph">
+							<div className="element">
+								<h3>Frequently asked questions</h3>
+							</div>
+						</div>
+					</div>
+
 				</div>
 
 			</section>
