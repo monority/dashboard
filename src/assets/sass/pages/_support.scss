@@ -5,17 +5,26 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 2rem;
+
 		@media (min-width: v.$md_breakpoint) {
 			display: flex;
 			justify-content: space-between;
 			flex-direction: row;
 		}
-		
+
 	}
-	.wrapper_bottom{
-			display: flex;
-			.fag,.history{
-				flex-basis: 50%;
+
+	.wrapper_bottom {
+		display: flex;
+		gap: 2rem;
+			@media (max-width: v.$md_breakpoint) {
+				flex-direction: column;
 			}
-		}
+
+	}
+
+	.fag,
+	.history {
+		flex-basis: 50%;
+	}
 }

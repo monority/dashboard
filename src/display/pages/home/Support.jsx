@@ -100,7 +100,7 @@ const Support = () => {
 						</div>
 						<div className="history box_graph">
 							<div className="element">
-								<h3>Frequently asked questions</h3>
+								<h3>Support history</h3>
 							</div>
 						</div>
 					</div>
