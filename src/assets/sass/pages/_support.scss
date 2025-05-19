@@ -14,7 +14,7 @@
 
 	}
 
-	.wrapper_bottom {
+	.wrapper_bottom ,.wrapper_form{
 		display: flex;
 		gap: 2rem;
 			@media (max-width: v.$md_breakpoint) {

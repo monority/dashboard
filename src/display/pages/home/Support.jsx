@@ -32,7 +32,7 @@ const Support = () => {
 								<p className='text_color02'>Fill up the informations below</p>
 							</div>
 						</div>
-						<div className="wrapper">
+						<div className="wrapper_form">
 							<div className="container">
 								<div className="element">
 									<h5>Select request type</h5>
