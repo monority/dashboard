@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-// Import your input components - adjust paths as needed
 import Input from './Input';
 import Select from './Select';
 import Option from './Option';
@@ -25,19 +22,13 @@ const Form = React.memo(({
   onChange,
   ...rest
 }) => {
-  const formClasses = ['form', `form-${layout}`, className]
-    .filter(Boolean)
-    .join(' ');
+  const formClasses = ['form', `form-${layout}`, className].filter(Boolean).join(' ');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     if (onSubmit && !disabled && !loading) {
       onSubmit(event);
-
-      if (resetOnSubmit) {
-        event.target.reset();
-      }
+      if (resetOnSubmit) event.target.reset();
     }
   };
 
@@ -52,9 +43,9 @@ const Form = React.memo(({
       ...fieldProps
     } = field;
 
-    const fieldValue = values[name] !== undefined ? values[name] : '';
+    const fieldValue = values[name] ?? '';
     const fieldError = errors[name];
-    
+
     const commonProps = {
       key: name,
       name,
@@ -66,52 +57,31 @@ const Form = React.memo(({
       ...fieldProps
     };
 
-    switch (type) {
-      case 'select':
-        return (
-          <Select {...commonProps} placeholder={placeholder}>
-            {options?.map(option => (
-              <Option 
-                key={option.value} 
-                value={option.value}
-                disabled={option.disabled}
-              >
-                {option.label}
-              </Option>
-            ))}
-          </Select>
-        );
-      case 'checkbox':
-        return (
-          <Checkbox
-            {...commonProps}
-            checked={!!fieldValue}
-          />
-        );
-      case 'radio':
-        return (
-          <RadioGroup
-            {...commonProps}
-            options={options}
-          />
-        );
-      case 'textarea':
-        return (
-          <Input
-            {...commonProps}
-            type="textarea"
-            placeholder={placeholder}
-          />
-        );
-      default:
-        return (
-          <Input
-            {...commonProps}
-            type={type}
-            placeholder={placeholder}
-          />
-        );
+    if (type === 'select') {
+      return (
+        <Select {...commonProps} placeholder={placeholder}>
+          {options?.map(option => (
+            <Option
+              key={option.value}
+              value={option.value}
+              disabled={option.disabled}
+            >
+              {option.label}
+            </Option>
+          ))}
+        </Select>
+      );
     }
+    if (type === 'checkbox') {
+      return <Checkbox {...commonProps} checked={!!fieldValue} />;
+    }
+    if (type === 'radio') {
+      return <RadioGroup {...commonProps} options={options} />;
+    }
+    if (type === 'textarea') {
+      return <Input {...commonProps} type="textarea" placeholder={placeholder} />;
+    }
+    return <Input {...commonProps} type={type} placeholder={placeholder} />;
   };
 
   return (
@@ -132,7 +102,6 @@ const Form = React.memo(({
         )}
         {children}
       </fieldset>
-
       {loading && (
         <div className="form-loading-overlay">
           <div className="form-loading-spinner" />
@@ -141,39 +110,5 @@ const Form = React.memo(({
     </form>
   );
 });
-
-Form.propTypes = {
-  onSubmit: PropTypes.func,
-  id: PropTypes.string,
-  className: PropTypes.string,
-  autoComplete: PropTypes.oneOf(['on', 'off']),
-  noValidate: PropTypes.bool,
-  children: PropTypes.node,
-  resetOnSubmit: PropTypes.bool,
-  layout: PropTypes.oneOf(['vertical', 'horizontal', 'inline']),
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
-  fields: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.string,
-      name: PropTypes.string.isRequired,
-      label: PropTypes.string,
-      placeholder: PropTypes.string,
-      required: PropTypes.bool,
-      options: PropTypes.arrayOf(
-        PropTypes.shape({
-          value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-          label: PropTypes.string.isRequired,
-          disabled: PropTypes.bool
-        })
-      )
-    })
-  ),
-  values: PropTypes.object,
-  errors: PropTypes.object,
-  onChange: PropTypes.func
-};
-
-Form.displayName = 'Form';
 
 export default Form;
