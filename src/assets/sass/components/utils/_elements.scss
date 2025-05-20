@@ -1,7 +1,12 @@
 @use './variables' as v;
-input,label,button,textarea {
+
+input,
+label,
+button,
+textarea {
 	font-family: var(--font_family_inter);
 }
+
 .col {
 	position: relative;
 	flex: 1 0 100%;
@@ -20,10 +25,12 @@ input,label,button,textarea {
 	outline: none;
 	padding: 1rem;
 }
-.input_search{
+
+.input_search {
 	border: none;
 	outline: none;
 }
+
 .input_wrapper {
 	border: var(--border_color01);
 	border-radius: 0.5rem;
@@ -37,7 +44,7 @@ input,label,button,textarea {
 	gap: 1rem;
 }
 
-.input_full{
+.input_full {
 	border: none;
 	height: 3.5rem;
 	font-size: 1.5rem;
@@ -93,35 +100,37 @@ input,label,button,textarea {
 	cursor: pointer;
 }
 
-.box{
+.box {
 	padding: 0.5rem;
 	border: var(--border_color02);
 	border-radius: 1rem;
 }
 
-.box_graph{
+.box_graph {
 	padding: 1.5rem;
 	border: var(--border_color02);
 	border-radius: 1rem;
 	box-shadow: var(--box_shadow01);
-height: 100%;
-width: 100%;
-	img{
+	height: 100%;
+	width: 100%;
+
+	img {
 		width: 100%;
 	}
 }
 
-.border_bottom{
+.border_bottom {
 	border-bottom: var(--border_color01);
 }
-.standart_box{
+
+.standart_box {
 	background-color: var(--bg_color01);
 	padding: 1rem;
 	border-radius: 0.75rem;
-	border:var(--border_color01	);
+	border: var(--border_color01);
 }
 
-.badge{
+.badge {
 	padding: 0.15rem 0.65rem;
 	border-radius: 0.5rem;
 	font-size: 1.2rem;
@@ -130,68 +139,79 @@ width: 100%;
 	column-gap: 0.5rem;
 	width: fit-content;
 }
-.badge_success_light{
+
+.badge_success_light {
 	background-color: var(--color_success_light);
 	color: var(--text_success_light);
 }
+
 .badge_info {
-  background-color: var(--color_info_light, #e3f2fd);
-  color: var(--color_info_dark, #1976d2);
+	background-color: var(--color_info_light, #e3f2fd);
+	color: var(--color_info_dark, #1976d2);
 }
+
 .badge_negative {
-  background-color: var(--color_negative);
-  color: var(--text_negative);
+	background-color: var(--color_negative);
+	color: var(--text_negative);
 }
 
 .badge_secondary {
-  background-color: var(--color_secondary_light, #f3e5f5);
-  color: var(--color_secondary_dark, #7b1fa2);
+	background-color: var(--color_secondary_light, #f3e5f5);
+	color: var(--color_secondary_dark, #7b1fa2);
 }
 
 .accordion {
-  width: 100%;
-  border-radius: 0.5rem;
-  background: #fff;
-  box-shadow: 0 1px 4px #0001;
-  overflow: hidden;
+	width: 100%;
+	border-radius: 0.5rem;
+	background: #fff;
+	box-shadow: 0 1px 4px #0001;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
 }
 
 .accordion-item {
-  border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 
-  &:last-child {
-    border-bottom: none;
-  }
+	&:last-child {
+		border-bottom: none;
+	}
 }
 
 .accordion-title {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  outline: none;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-  color: #222;
+	width: 100%;
+	text-align: left;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 1rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.2s;
+	color: #222;
 
-  &:hover,
-  &[aria-expanded="true"] {
-    background: #f5f7fa;
-  }
+	&:hover,
+	&[aria-expanded="true"] {
+		background: #f5f7fa;
+	}
 }
 
 .accordion-content {
-  padding: 0 1rem 1rem 1rem;
-  font-size: 1rem;
-  color: #444;
-  background: #fafbfc;
-  animation: accordion-fade-in 0.2s;
+	padding: 0 1rem 1rem 1rem;
+	font-size: 1.3rem;
+	color: #444;
+	background: #fafbfc;
+	animation: accordion-fade-in 0.2s;
 }
 
 @keyframes accordion-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
