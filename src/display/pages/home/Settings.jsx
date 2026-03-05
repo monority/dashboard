@@ -3,35 +3,18 @@ import Input from '../../components/utils/base/Input';
 import Badge from '../../components/ui/element/Badges';
 
 const Settings = () => {
-  const [profile, setProfile] = useState({
-    name: 'John Doe',
-    email: 'john@example.com',
-    password: '',
-    notifications: true,
-    theme: 'light',
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setProfile((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
-  };
+  const [notifications, setNotifications] = useState(true);
+  const [theme, setTheme] = useState('light');
 
   return (
     <section className="settings">
       <div className="container flex column gap2">
-        <div className="wrapper">
-          <div className="element">
-            <h2>Settings</h2>
-          </div>
-          <div className="element">
-            <p className="text_color02">Manage your account and preferences</p>
-          </div>
+        <div className="settings__header">
+          <h2>Settings</h2>
+          <p className="text_color02">Manage your account and preferences</p>
         </div>
 
-        <div className="box_graph" style={{ maxWidth: 500 }}>
+        <div className="box_graph settings__card">
           <div className="wrapper_form">
             <div className="container">
               <div className="element">
@@ -41,30 +24,26 @@ const Settings = () => {
                 <Input
                   type="text"
                   name="name"
-                  value={profile.name}
-                  onChange={handleChange}
+                  initialValue="John Doe"
                   placeholder="Your name"
-                  maxWidth="100%"
+                  inputClassName="input_search"
                 />
               </div>
               <div className="element">
                 <Input
                   type="email"
                   name="email"
-                  value={profile.email}
-                  onChange={handleChange}
+                  initialValue="john@example.com"
                   placeholder="Your email"
-                  maxWidth="100%"
+                  inputClassName="input_search"
                 />
               </div>
               <div className="element">
                 <Input
                   type="password"
                   name="password"
-                  value={profile.password}
-                  onChange={handleChange}
                   placeholder="New password"
-                  maxWidth="100%"
+                  inputClassName="input_search"
                 />
               </div>
             </div>
@@ -72,31 +51,30 @@ const Settings = () => {
               <div className="element">
                 <h4>Preferences</h4>
               </div>
-              <div className="element flex row gap1" style={{ alignItems: 'center' }}>
+              <div className="element settings__checkbox_row">
                 <input
                   type="checkbox"
                   id="notifications"
                   name="notifications"
-                  checked={profile.notifications}
-                  onChange={handleChange}
-                  style={{ marginRight: 8 }}
+                  checked={notifications}
+                  onChange={(e) => setNotifications(e.target.checked)}
                 />
                 <label htmlFor="notifications">Enable notifications</label>
-                {profile.notifications && (
+                {notifications && (
                   <Badge colorBadge="success_light" label="On" />
                 )}
-                {!profile.notifications && (
+                {!notifications && (
                   <Badge colorBadge="negative" label="Off" />
                 )}
               </div>
-              <div className="element">
-                <label htmlFor="theme">Theme</label>
+              <div className="element settings__select_wrapper">
+                <label className="settings__label" htmlFor="theme">Theme</label>
                 <select
                   id="theme"
                   name="theme"
-                  value={profile.theme}
-                  onChange={handleChange}
-                  style={{ marginLeft: 8, padding: '0.3em 1em', borderRadius: 6 }}
+                  value={theme}
+                  onChange={(e) => setTheme(e.target.value)}
+                  className="settings__select"
                 >
                   <option value="light">Light</option>
                   <option value="dark">Dark</option>
@@ -106,7 +84,7 @@ const Settings = () => {
             </div>
             <div className="container">
               <div className="element">
-                <button className="btn btn-primary" style={{ width: '100%' }}>
+                <button className="settings__save">
                   Save Changes
                 </button>
               </div>

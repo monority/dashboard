@@ -17,6 +17,7 @@
 @use "./pages/task";
 @use "./pages/reviews";
 @use "./pages/support";
+@use "./pages/settings";
 
 
 .lyt_container {
@@ -25,15 +26,17 @@
 	max-width: 90vw;
 }
 
-section{
+section {
 	padding: 5rem;
+
 	@media screen and (max-width: v.$lg_breakpoint) {
 		padding: 0;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 	}
-	
+
 }
+
 .container_responsive {
 	@include mixins.flex_res(initial, center, column, row)
 }
@@ -86,15 +89,16 @@ section{
 
 }
 
-#root{
+#root {
 	display: flex;
 	min-height: 100vh;
+
 	@media (max-width: v.$lg_breakpoint) {
 		flex-direction: column;
 	}
 }
 
-main{
+main {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
