@@ -1,27 +1,37 @@
 export type UserRole = 'admin' | 'manager' | 'viewer';
 
 export interface Permission {
-    code: string;
-    description: string;
+  code: string;
+  description: string;
 }
 
 export interface User {
-    id: string;
-    email: string;
-    fullName: string;
-    role: UserRole;
-    permissions: Permission[];
+  id: string;
+  email: string;
+  fullName: string;
+  role: UserRole;
+  permissions: Permission[];
 }
 
 export interface BillingRecord {
-    id: string;
-    amountCents: number;
-    currency: 'EUR' | 'USD';
-    status: 'paid' | 'pending' | 'failed';
-    issuedAt: Date;
+  id: string;
+  amountCents: number;
+  currency: 'EUR' | 'USD';
+  status: 'paid' | 'pending' | 'failed';
+  issuedAt: Date;
 }
 
 export interface AppSettings {
-    theme: 'light' | 'dark' | 'system';
-    notificationsEnabled: boolean;
+  theme: 'light' | 'dark' | 'system';
+  notificationsEnabled: boolean;
+}
+
+export type GlobalSearchResultKind = 'section' | 'mail' | 'task' | 'support' | 'review' | 'order';
+
+export interface GlobalSearchResult {
+  id: string;
+  label: string;
+  description: string;
+  route: string;
+  kind: GlobalSearchResultKind;
 }

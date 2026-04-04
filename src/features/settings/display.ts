@@ -1,0 +1,21 @@
+export const SETTINGS_COPY = {
+  pageTitle: 'Parametres',
+  pageDescription: "Gere les preferences d'interface et la politique de notification.",
+  savedTitle: 'Parametres enregistres',
+  savedDescription: 'Les preferences ont ete mises a jour avec succes.',
+  appearance: 'Apparence',
+  theme: 'Theme',
+  notifications: 'Notifications',
+  enableNotifications: 'Activer les notifications',
+  enabled: 'Activees',
+  disabled: 'Desactivees',
+  activeStatus: 'Notifications actives',
+  mutedStatus: 'Notifications coupees',
+  saving: 'Enregistrement...',
+  save: 'Enregistrer les modifications',
+  themeOptions: {
+    light: 'Clair',
+    dark: 'Sombre',
+    system: 'Systeme',
+  },
+} as const;

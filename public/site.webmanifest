@@ -1,0 +1,17 @@
+{
+  "name": "Hub admin",
+  "short_name": "Hub",
+  "description": "Panneau admin interne pour piloter les operations et les outils metier.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#0f62fe",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,7 +1,16 @@
 import { Outlet } from 'react-router-dom';
 
+import { useRouteMetadata } from '@/app/useRouteMetadata';
 import { Header, Shell, Sidebar } from '@/components';
 
 export const AppLayout = () => {
-    return <Shell sidebar={<Sidebar />} header={<Header />}><Outlet /></Shell>;
+  useRouteMetadata();
+
+  return (
+    <Shell sidebar={<Sidebar />} header={<Header />}>
+      <Outlet />
+    </Shell>
+  );
 };
+
+AppLayout.displayName = 'AppLayout';

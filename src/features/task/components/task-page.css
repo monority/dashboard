@@ -1,0 +1,99 @@
+.task-page {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.task-toolbar {
+  display: grid;
+  grid-template-columns: 1fr 14rem auto;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+.task-summary {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.task-grid {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.task-header,
+.task-row {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(18rem, 1fr) 8rem 8rem 8rem 12rem;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.task-header {
+  padding-inline: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  text-transform: uppercanpse;
+  letter-spacing: 0.02em;
+}
+
+.task-row {
+  padding: var(--space-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--surface-1);
+}
+
+.task-row:hover {
+  background: color-mix(in oklab, var(--accent) 6%, transparent);
+}
+
+.task-cell {
+  min-width: 0;
+  font-size: var(--text-sm);
+}
+
+.task-cell-title p {
+  margin-top: 0.15rem;
+  color: var(--text-secondary);
+  line-height: var(--line-height-dense);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.task-cell-actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.task-body {
+  max-height: 34rem;
+  overflow: auto;
+}
+
+.task-skeleton-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.task-empty {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1200px) {
+  .task-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .task-header,
+  .task-row {
+    grid-template-columns: 2rem minmax(14rem, 1fr) 7rem 7rem;
+  }
+
+  .task-cell-actions,
+  .task-header .task-cell-actions,
+  .task-cell:nth-child(5),
+  .task-header .task-cell:nth-child(5) {
+    display: none;
+  }
+}

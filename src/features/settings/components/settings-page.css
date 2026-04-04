@@ -1,0 +1,40 @@
+.settings-page {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.settings-form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.settings-fieldset {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.settings-fieldset legend {
+  padding-inline: var(--space-1);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.settings-row p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.settings-skeleton {
+  display: grid;
+  gap: var(--space-2);
+}

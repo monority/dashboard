@@ -1,0 +1,85 @@
+.support-page {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.support-page h1,
+.support-page h2,
+.support-page h3 {
+  margin: 0;
+}
+
+.support-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.support-ticket-form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.support-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.support-stats-grid p {
+  margin: 0.2rem 0 0.4rem;
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.support-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-4);
+}
+
+.support-faq-list {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.support-faq-list details {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+.support-faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.support-faq-list p {
+  margin: var(--space-2) 0 0;
+  color: var(--text-secondary);
+}
+
+.support-history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.support-stats-skeleton,
+.support-faq-skeleton,
+.support-history-skeleton {
+  display: grid;
+  gap: var(--space-2);
+}
+
+@media (max-width: 1200px) {
+  .support-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support-bottom {
+    grid-template-columns: 1fr;
+  }
+}
