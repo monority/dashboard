@@ -13,6 +13,14 @@ const ROUTE_METADATA: Record<string, { title: string; description: string }> = {
     description:
       'Vue d ensemble des KPI, alertes, objectifs et activites recentes de l espace de travail.',
   },
+  [APP_ROUTES.admin]: {
+    title: 'Admin Dashboard',
+    description: 'Monitoring temps reel des metriques serveur, actions et transactions.',
+  },
+  [APP_ROUTES.fetchUrls]: {
+    title: 'Fetch URLs',
+    description: 'Testeur de requetes HTTP pour deboguer et tester vos endpoints API.',
+  },
   [APP_ROUTES.mail]: {
     title: 'Mail',
     description: 'Gestion des fils de conversation, recherche rapide et tri par dossier.',

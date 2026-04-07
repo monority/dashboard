@@ -21,6 +21,9 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'es2022',
+    minify: 'esbuild',
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -33,6 +36,10 @@ export default defineConfig({
               return 'vendor-data';
             }
 
+            if (id.includes('recharts')) {
+              return 'vendor-charts';
+            }
+
             return 'vendor';
           }
 
@@ -40,6 +47,9 @@ export default defineConfig({
         },
       },
     },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'zustand'],
   },
   test: {
     environment: 'jsdom',

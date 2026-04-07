@@ -2,12 +2,19 @@ import { lazy, Suspense, type LazyExoticComponent } from 'react';
 import type { JSX } from 'react';
 import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 
-import { AppLayout, ErrorBoundary } from '@/components';
+import { AppLayout, ErrorBoundary, ProtectedRoute } from '@/components';
 import { Skeleton } from '@/components/ui';
 import { APP_ROUTES } from '@/utils';
 
 const DashboardPage = lazy(() =>
   import('@/features/dashboard').then((m) => ({ default: m.DashboardPage })),
+);
+const AdminDashboardPage = lazy(() =>
+  import('@/features/admin-dashboard').then((m) => ({ default: m.AdminDashboardPage })),
+);
+const LoginPage = lazy(() => import('@/features/auth').then((m) => ({ default: m.LoginPage })));
+const FetchUrlsPage = lazy(() =>
+  import('@/features/fetch-urls').then((m) => ({ default: m.FetchUrlsPage })),
 );
 const MailPage = lazy(() => import('@/features/mail').then((m) => ({ default: m.MailPage })));
 const OrderPage = lazy(() => import('@/features/order').then((m) => ({ default: m.OrderPage })));
@@ -32,10 +39,20 @@ const lazyElement = (Component: LazyExoticComponent<() => JSX.Element>) => (
 
 const routes: RouteObject[] = [
   {
+    path: APP_ROUTES.login,
+    element: lazyElement(LoginPage),
+  },
+  {
     path: APP_ROUTES.dashboard,
-    element: <AppLayout />,
+    element: (
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    ),
     children: [
       { index: true, element: lazyElement(DashboardPage) },
+      { path: APP_ROUTES.admin.slice(1), element: lazyElement(AdminDashboardPage) },
+      { path: APP_ROUTES.fetchUrls.slice(1), element: lazyElement(FetchUrlsPage) },
       { path: APP_ROUTES.mail.slice(1), element: lazyElement(MailPage) },
       { path: APP_ROUTES.order.slice(1), element: lazyElement(OrderPage) },
       { path: APP_ROUTES.task.slice(1), element: lazyElement(TaskPage) },

@@ -35,3 +35,31 @@ export interface GlobalSearchResult {
   route: string;
   kind: GlobalSearchResultKind;
 }
+
+export interface StockData {
+  symbol: string;
+  name: string;
+  price: number;
+  change: number;
+  changePercent: number;
+  timestamp: number;
+}
+
+export interface ServerMetrics {
+  cpu: number;
+  memory: number;
+  disk: number;
+  networkIn: number;
+  networkOut: number;
+  timestamp: number;
+}
+
+export interface Transaction {
+  id: string;
+  userId: string;
+  userName: string;
+  amount: number;
+  currency: string;
+  status: 'success' | 'pending' | 'failed';
+  timestamp: number;
+}

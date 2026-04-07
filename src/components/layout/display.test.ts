@@ -7,7 +7,7 @@ describe('layout display', () => {
     expect(LAYOUT_ROUTE_LABELS['/']).toBe('Tableau de bord');
     expect(LAYOUT_ROUTE_LABELS['/reviews']).toBe('Avis');
 
-    expect(LAYOUT_NAV_ITEMS).toHaveLength(7);
+    expect(LAYOUT_NAV_ITEMS).toHaveLength(9);
     expect(LAYOUT_NAV_ITEMS[0]?.label).toBe('Tableau de bord');
   });
 

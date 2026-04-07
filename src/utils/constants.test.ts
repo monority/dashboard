@@ -6,6 +6,9 @@ describe('constants', () => {
   it('expose les routes applicatives attendues', () => {
     expect(APP_ROUTES).toEqual({
       dashboard: '/',
+      admin: '/admin',
+      login: '/login',
+      fetchUrls: '/fetch-urls',
       mail: '/mail',
       order: '/order',
       task: '/task',

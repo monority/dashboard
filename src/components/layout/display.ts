@@ -2,6 +2,8 @@ import { APP_ROUTES } from '@/utils';
 
 export const LAYOUT_ROUTE_LABELS: Record<string, string> = {
   [APP_ROUTES.dashboard]: 'Tableau de bord',
+  [APP_ROUTES.admin]: 'Admin Dashboard',
+  [APP_ROUTES.fetchUrls]: 'Fetch URLs',
   [APP_ROUTES.mail]: 'Mail',
   [APP_ROUTES.order]: 'Commandes',
   [APP_ROUTES.task]: 'Taches',
@@ -17,6 +19,20 @@ export const LAYOUT_NAV_ITEMS = [
     description: "Vue d'ensemble et KPIs",
     code: 'DB',
     shortcut: 'G D',
+  },
+  {
+    label: 'Admin Dashboard',
+    to: APP_ROUTES.admin,
+    description: 'Donnees temps reel et monitoring',
+    code: 'AD',
+    shortcut: 'G A',
+  },
+  {
+    label: 'Fetch URLs',
+    to: APP_ROUTES.fetchUrls,
+    description: 'Testeur de requetes HTTP',
+    code: 'FU',
+    shortcut: 'G F',
   },
   {
     label: 'Mail',

@@ -1,6 +1,9 @@
 /** Application route paths for navigation */
 export const APP_ROUTES = {
   dashboard: '/',
+  admin: '/admin',
+  login: '/login',
+  fetchUrls: '/fetch-urls',
   mail: '/mail',
   order: '/order',
   task: '/task',
@@ -25,6 +28,7 @@ export const QUERY_KEYS = {
   reviewsData: ['reviews', 'data'] as const,
   supportDashboard: ['support', 'dashboard'] as const,
   tasks: (status: string, search: string) => ['tasks', status, search] as const,
+  fetchUrlsHistory: ['fetch-urls', 'history'] as const,
 } as const;
 
 /** UI theme options for user preference */

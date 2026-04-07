@@ -8,6 +8,8 @@ import { LAYOUT_COPY, LAYOUT_NAV_ITEMS } from './display';
 
 const PREFETCH_LOADERS: Record<string, () => Promise<unknown>> = {
   [APP_ROUTES.dashboard]: () => import('@/features/dashboard'),
+  [APP_ROUTES.admin]: () => import('@/features/admin-dashboard'),
+  [APP_ROUTES.fetchUrls]: () => import('@/features/fetch-urls'),
   [APP_ROUTES.mail]: () => import('@/features/mail'),
   [APP_ROUTES.order]: () => import('@/features/order'),
   [APP_ROUTES.task]: () => import('@/features/task'),
