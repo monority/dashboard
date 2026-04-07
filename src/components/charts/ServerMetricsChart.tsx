@@ -25,8 +25,20 @@ const COLORS = {
   disk: '#10b981',
 };
 
+const getThemeColors = () => {
+  const isDark = document.body.getAttribute('data-theme') === 'dark';
+  return {
+    grid: isDark ? '#2c3748' : '#e5e7eb',
+    axis: isDark ? '#8f9cb0' : '#6b7280',
+    text: isDark ? '#e6ebf3' : '#374151',
+    bg: isDark ? '#171d26' : '#ffffff',
+    border: isDark ? '#2c3748' : '#e5e7eb',
+  };
+};
+
 export function ServerMetricsChart({ data, metric, color }: ServerMetricsChartProps) {
   const chartColor = color || COLORS[metric];
+  const theme = getThemeColors();
 
   return (
     <ResponsiveContainer width="100%" height={200}>
@@ -37,15 +49,16 @@ export function ServerMetricsChart({ data, metric, color }: ServerMetricsChartPr
             <stop offset="95%" stopColor={chartColor} stopOpacity={0} />
           </linearGradient>
         </defs>
-        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-        <XAxis dataKey="time" stroke="#6b7280" fontSize={12} />
-        <YAxis stroke="#6b7280" fontSize={12} domain={[0, 100]} />
+        <CartesianGrid strokeDasharray="3 3" stroke={theme.grid} />
+        <XAxis dataKey="time" stroke={theme.axis} fontSize={12} />
+        <YAxis stroke={theme.axis} fontSize={12} domain={[0, 100]} />
         <Tooltip
           contentStyle={{
-            backgroundColor: '#fff',
-            border: '1px solid #e5e7eb',
+            backgroundColor: theme.bg,
+            border: `1px solid ${theme.border}`,
             borderRadius: '8px',
           }}
+          labelStyle={{ color: theme.text }}
           formatter={(value) => [`${Number(value).toFixed(1)}%`, metric.toUpperCase()]}
         />
         <Area

@@ -13,7 +13,20 @@ interface StockChartProps {
   color?: string;
 }
 
+const getThemeColors = () => {
+  const isDark = document.body.getAttribute('data-theme') === 'dark';
+  return {
+    grid: isDark ? '#2c3748' : '#e5e7eb',
+    axis: isDark ? '#8f9cb0' : '#6b7280',
+    text: isDark ? '#e6ebf3' : '#374151',
+    bg: isDark ? '#171d26' : '#ffffff',
+    border: isDark ? '#2c3748' : '#e5e7eb',
+  };
+};
+
 export function StockChart({ data, color = '#3b82f6' }: StockChartProps) {
+  const theme = getThemeColors();
+
   return (
     <ResponsiveContainer width="100%" height={300}>
       <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
@@ -23,16 +36,16 @@ export function StockChart({ data, color = '#3b82f6' }: StockChartProps) {
             <stop offset="95%" stopColor={color} stopOpacity={0} />
           </linearGradient>
         </defs>
-        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-        <XAxis dataKey="time" stroke="#6b7280" fontSize={12} />
-        <YAxis stroke="#6b7280" fontSize={12} domain={['auto', 'auto']} />
+        <CartesianGrid strokeDasharray="3 3" stroke={theme.grid} />
+        <XAxis dataKey="time" stroke={theme.axis} fontSize={12} />
+        <YAxis stroke={theme.axis} fontSize={12} domain={['auto', 'auto']} />
         <Tooltip
           contentStyle={{
-            backgroundColor: '#fff',
-            border: '1px solid #e5e7eb',
+            backgroundColor: theme.bg,
+            border: `1px solid ${theme.border}`,
             borderRadius: '8px',
           }}
-          labelStyle={{ color: '#374151' }}
+          labelStyle={{ color: theme.text }}
         />
         <Area
           type="monotone"
