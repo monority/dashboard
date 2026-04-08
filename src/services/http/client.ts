@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toApiError } from './errors';
 
 /** Base URL for all API requests. Reads from VITE_API_URL env var, defaults to '/api' */
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? '/api';
+const API_BASE_URL = import.meta.env['VITE_API_URL'] ?? '/api';
 
 /**
  * Pre-configured Axios HTTP client with:
@@ -31,7 +31,9 @@ httpClient.interceptors.request.use((config) => {
 
   if (csrfCookie) {
     const csrfToken = csrfCookie.split('=')[1];
-    config.headers['X-XSRF-TOKEN'] = decodeURIComponent(csrfToken);
+    if (csrfToken) {
+      config.headers['X-XSRF-TOKEN'] = decodeURIComponent(csrfToken);
+    }
   }
 
   return config;

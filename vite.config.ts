@@ -9,6 +9,7 @@ import { defineConfig } from 'vitest/config';
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
+// @ts-ignore
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
@@ -75,7 +76,14 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'zustand'],
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@tanstack/react-query',
+      'zustand',
+      'recharts',
+    ],
     exclude: ['@tanstack/react-virtual'],
   },
   test: {

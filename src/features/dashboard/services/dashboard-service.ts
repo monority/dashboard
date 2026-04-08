@@ -4,7 +4,6 @@ import type {
   DashboardAlert,
   DashboardFilters,
   DashboardGoal,
-  DashboardKpi,
   DashboardOverview,
   DashboardRange,
   DashboardTeam,
@@ -19,12 +18,28 @@ const RANGE_POINT_COUNT: Record<DashboardRange, number> = {
   '90d': 12,
 };
 
-const BASE_KPIS: DashboardKpi[] = [
-  { id: 'revenue', label: "Chiffre d'affaires total", value: '45 000 €', trendPercent: 20.3 },
-  { id: 'subscriptions', label: 'Abonnements', value: '2 350', trendPercent: 11.7 },
-  { id: 'sales', label: 'Ventes', value: '12 500', trendPercent: 5.7 },
-  { id: 'active', label: 'Utilisateurs actifs', value: '125', trendPercent: 4.5 },
+let dynamicKpis = [
+  { id: 'revenue', label: "Chiffre d'affaires total", value: 45000, trendPercent: 20.3 },
+  { id: 'subscriptions', label: 'Abonnements', value: 2350, trendPercent: 11.7 },
+  { id: 'sales', label: 'Ventes', value: 12500, trendPercent: 5.7 },
+  { id: 'active', label: 'Utilisateurs actifs', value: 125, trendPercent: 4.5 },
 ];
+
+setInterval(() => {
+  // Variation lente et naturelle des KPIs
+  dynamicKpis = dynamicKpis.map((kpi) => {
+    const variation = (Math.random() - 0.485) * 0.003; // Variation tres faible 0.3% max
+    const newValue = Math.max(0, kpi.value * (1 + variation));
+    return {
+      ...kpi,
+      value: Math.round(newValue),
+      trendPercent: Math.max(
+        -20,
+        Math.min(40, Math.round((variation * 100 + kpi.trendPercent * 0.99) * 10) / 10),
+      ),
+    };
+  });
+}, 5000);
 
 const BASE_TREND: DashboardTrendPoint[] = [
   { label: 'W1', value: 21000 },
@@ -185,8 +200,16 @@ const buildOverview = (filters: DashboardFilters): DashboardOverview => {
     includesSearch([goal.label, goal.unit], filters.search),
   );
 
+  const formattedKpis = dynamicKpis.map((kpi) => ({
+    ...kpi,
+    value:
+      kpi.id === 'revenue'
+        ? `${kpi.value.toLocaleString('fr-FR')} €`
+        : kpi.value.toLocaleString('fr-FR'),
+  }));
+
   return {
-    kpis: BASE_KPIS,
+    kpis: formattedKpis,
     trend: getTrendForRange(filters.range),
     alerts: teamFilteredAlerts,
     goals: teamFilteredGoals,

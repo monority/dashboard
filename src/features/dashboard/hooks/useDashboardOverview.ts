@@ -15,12 +15,15 @@ export const useDashboardOverview = (filters: DashboardFilters) => {
     [filters.range, filters.team, deferredSearch],
   );
 
-  return useQuery({
+  const query = useQuery({
     queryKey,
     queryFn: () =>
       dashboardService.getOverview({
         ...filters,
         search: deferredSearch,
       }),
+    refetchInterval: 3000, // Auto rafraichissement toutes les 3 secondes
   });
+
+  return query;
 };
