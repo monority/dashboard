@@ -110,12 +110,57 @@ Exemples:
 ## Scripts
 
 - `npm run dev`: lancement local Vite
+- `npm run dev:mock`: lancement avec mode mock
 - `npm run build`: build production
 - `npm run preview`: preview du build
 - `npm run typecheck`: verification TypeScript stricte
 - `npm run lint`: controle ESLint
+- `npm run lint:fix`: correction automatique ESLint
 - `npm run format`: formatage Prettier
 - `npm run format:check`: verification formatage
+- `npm run test`: execution des tests unitaires
+- `npm run test:watch`: execution des tests en mode watch
+- `npm run test:coverage`: execution des tests avec couverture
+- `npm run test:e2e`: execution des tests end-to-end
+- `npm run test:e2e:ui`: execution des tests e2e avec interface
+- `npm run test:e2e:debug`: execution des tests e2e en mode debug
+- `npm run test:e2e:headed`: execution des tests e2e avec navigateur visible
+- `npm run check`: verification complete (typecheck + lint + format)
+- `npm run check:all`: verification complete avec tests
+- `npm run analyze`: analyse du bundle avec visualisation
+
+## Sécurité et Performance
+
+### Authentification par Cookies HttpOnly
+
+- Migration des tokens JWT vers des cookies HttpOnly sécurisés
+- Protection contre les attaques XSS
+- Configuration Axios avec `withCredentials: true`
+
+### Compression
+
+- Compression Gzip et Brotli configurée via `vite-plugin-compression2`
+- Réduction de la taille des assets pour des temps de chargement plus rapides
+
+### SEO
+
+- Métadonnées Open Graph et Twitter Cards complètes
+- Données structurées JSON-LD (WebApplication et WebSite)
+- Support des schémas Schema.org pour une meilleure indexation
+
+### Accessibilité
+
+- Régions `aria-live` pour les annonces de lecteur d'écran
+- Gestion du focus dans les modales
+- Navigation au clavier complète
+- Skip links pour la navigation au clavier
+
+### Code Splitting Avancé
+
+- Chargement paresseux (lazy loading) des routes
+- Découpage des bundles par fonctionnalité
+- Séparation des vendors React, data, charts, et websocket
+- Plugin de visualisation du bundle (`rollup-plugin-visualizer`)
 
 ## Qualite et conventions
 

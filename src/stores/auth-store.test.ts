@@ -4,7 +4,6 @@ import { authStore } from './auth-store';
 
 const INITIAL_STATE = {
   user: null,
-  token: null,
   permissions: [],
 };
 
@@ -13,7 +12,7 @@ describe('authStore', () => {
     authStore.setState(INITIAL_STATE);
   });
 
-  it('setAuth met a jour user, token et permissions', () => {
+  it('setAuth met a jour user et permissions', () => {
     authStore.getState().setAuth({
       user: {
         id: 'u1',
@@ -22,11 +21,9 @@ describe('authStore', () => {
         email: 'alice@example.com',
         role: 'admin',
       } as never,
-      token: 'token-123',
       permissions: ['users.read', 'users.write'],
     });
 
-    expect(authStore.getState().token).toBe('token-123');
     expect(authStore.getState().permissions).toEqual(['users.read', 'users.write']);
     expect(authStore.getState().user).not.toBeNull();
   });
@@ -34,14 +31,12 @@ describe('authStore', () => {
   it('clearAuth reinitialise le store', () => {
     authStore.setState({
       user: { id: 'u1' } as never,
-      token: 'token-123',
       permissions: ['users.read'],
     });
 
     authStore.getState().clearAuth();
 
     expect(authStore.getState().user).toBeNull();
-    expect(authStore.getState().token).toBeNull();
     expect(authStore.getState().permissions).toEqual([]);
   });
 });

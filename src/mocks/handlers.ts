@@ -293,7 +293,6 @@ export const handlers = [
     }
     return HttpResponse.json({
       data: {
-        token: 'mock-jwt-token',
         user: mockHandlers.users[0],
       },
     });

@@ -8,7 +8,6 @@ import { useAuth } from './useAuth';
 
 const INITIAL_STATE = {
   user: null,
-  token: null,
   permissions: [],
 };
 
@@ -25,14 +24,14 @@ describe('useAuth', () => {
     });
   });
 
-  it('expose isAuthenticated=false sans token', () => {
+  it('expose isAuthenticated=false sans user', () => {
     const { result } = renderHook(() => useAuth());
 
     expect(result.current.isAuthenticated).toBe(false);
-    expect(result.current.token).toBeNull();
+    expect(result.current.user).toBeNull();
   });
 
-  it('expose user, token, permissions et isAuthenticated=true apres setAuth', () => {
+  it('expose user, permissions et isAuthenticated=true apres setAuth', () => {
     const { result } = renderHook(() => useAuth());
 
     act(() => {
@@ -44,13 +43,12 @@ describe('useAuth', () => {
           email: 'alice@example.com',
           role: 'admin',
         } as never,
-        token: 'token-123',
         permissions: ['users.read'],
       });
     });
 
     expect(result.current.isAuthenticated).toBe(true);
-    expect(result.current.token).toBe('token-123');
+    expect(result.current.user).not.toBeNull();
     expect(result.current.permissions).toEqual(['users.read']);
   });
 
@@ -60,7 +58,6 @@ describe('useAuth', () => {
     act(() => {
       result.current.setAuth({
         user: { id: 'u1' } as never,
-        token: 'token-123',
         permissions: ['users.read'],
       });
     });

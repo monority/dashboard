@@ -65,7 +65,6 @@ export function LoginPage() {
           role: user.role,
           permissions: user.permissions.map((p) => ({ code: p, description: p })),
         },
-        token: 'mock-jwt-token',
         permissions: user.permissions,
       });
       navigate(APP_ROUTES.admin);

@@ -8,7 +8,6 @@ import { usePermissions } from './usePermissions';
 
 const INITIAL_STATE = {
   user: null,
-  token: null,
   permissions: [],
 };
 

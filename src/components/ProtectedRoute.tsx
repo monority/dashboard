@@ -11,9 +11,8 @@ interface ProtectedRouteProps {
 export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) {
   const location = useLocation();
   const user = authStore((state) => state.user);
-  const token = authStore((state) => state.token);
 
-  if (!token || !user) {
+  if (!user) {
     return <Navigate to={APP_ROUTES.login} state={{ from: location }} replace />;
   }
 

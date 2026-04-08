@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { BaseComponentProps } from '@/types';
 
@@ -19,12 +19,22 @@ interface ModalProps extends BaseComponentProps {
  * - Escape key closes the modal
  * - Backdrop click closes the modal
  * - Full keyboard navigation support within modal
+ * - Screen reader announcements for modal state changes
  *
  * @param props - Modal component props
  * @returns Modal dialog element, null when not open
  */
 export const Modal = ({ title, isOpen, onClose, children, className, testId }: ModalProps) => {
   const dialogRef = useRef<HTMLDivElement | null>(null);
+  const [announcement, setAnnouncement] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      setAnnouncement(`Modal "${title}" opened. Use Escape key to close.`);
+    } else {
+      setAnnouncement(`Modal "${title}" closed.`);
+    }
+  }, [isOpen, title]);
 
   useEffect(() => {
     if (!isOpen || !dialogRef.current) {
@@ -72,40 +82,47 @@ export const Modal = ({ title, isOpen, onClose, children, className, testId }: M
   const classes = ['ui-modal', className].filter(Boolean).join(' ');
 
   return (
-    <div
-      className="ui-modal-overlay"
-      role="button"
-      tabIndex={0}
-      aria-label="Fermer la fenetre modale"
-      onClick={(event) => {
-        if (event.target === event.currentTarget) {
-          onClose();
-        }
-      }}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          onClose();
-        }
-      }}
-    >
-      <div
-        ref={dialogRef}
-        className={classes}
-        role="dialog"
-        aria-modal="true"
-        aria-label={title}
-        data-testid={testId}
-      >
-        <header className="ui-modal-header">
-          <h2>{title}</h2>
-          <button type="button" onClick={onClose} aria-label="Fermer la fenetre">
-            ×
-          </button>
-        </header>
-        <div className="ui-modal-content">{children}</div>
+    <>
+      {/* Screen reader announcements for modal state changes */}
+      <div className="app-visually-hidden" aria-live="assertive" aria-atomic="true">
+        {announcement}
       </div>
-    </div>
+
+      <div
+        className="ui-modal-overlay"
+        role="button"
+        tabIndex={0}
+        aria-label="Fermer la fenetre modale"
+        onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            onClose();
+          }
+        }}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            onClose();
+          }
+        }}
+      >
+        <div
+          ref={dialogRef}
+          className={classes}
+          role="dialog"
+          aria-modal="true"
+          aria-label={title}
+          data-testid={testId}
+        >
+          <header className="ui-modal-header">
+            <h2>{title}</h2>
+            <button type="button" onClick={onClose} aria-label="Fermer la fenetre">
+              ×
+            </button>
+          </header>
+          <div className="ui-modal-content">{children}</div>
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,4 @@
-import axios, { type InternalAxiosRequestConfig } from 'axios';
-
-import { authStore } from '@/stores';
+import axios from 'axios';
 
 import { toApiError } from './errors';
 
@@ -9,7 +7,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL ?? '/api';
 
 /**
  * Pre-configured Axios HTTP client with:
- * - Auto-injected Authorization header from auth store
+ * - HttpOnly cookie authentication (withCredentials: true)
  * - Normalized error handling via toApiError
  * - 10 second request timeout
  * - JSON content type default
@@ -24,16 +22,7 @@ export const httpClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-});
-
-httpClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  const token = authStore.getState().token;
-
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-
-  return config;
+  withCredentials: true,
 });
 
 httpClient.interceptors.response.use(
