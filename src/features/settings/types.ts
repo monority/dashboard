@@ -1,4 +1,4 @@
 export interface SettingsFormValues {
-    theme: 'light' | 'dark' | 'system';
-    notificationsEnabled: boolean;
+  theme: 'light' | 'dark' | 'system';
+  notificationsEnabled: boolean;
 }

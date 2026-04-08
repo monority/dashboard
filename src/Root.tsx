@@ -7,12 +7,12 @@ import { queryClient } from '@/services';
 import { router } from './app/router';
 
 const Root = () => {
-    return (
-        <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
-            <Toast />
-        </QueryClientProvider>
-    );
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <Toast />
+    </QueryClientProvider>
+  );
 };
 
 export default Root;

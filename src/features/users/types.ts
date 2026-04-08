@@ -1,4 +1,4 @@
 export interface UserFilters {
-    search?: string;
-    role?: 'admin' | 'manager' | 'viewer';
+  search?: string;
+  role?: 'admin' | 'manager' | 'viewer';
 }
