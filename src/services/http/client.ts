@@ -25,6 +25,18 @@ export const httpClient = axios.create({
   withCredentials: true,
 });
 
+// CSRF Token interceptor for double submit cookie pattern
+httpClient.interceptors.request.use((config) => {
+  const csrfCookie = document.cookie.split('; ').find((row) => row.startsWith('XSRF-TOKEN='));
+
+  if (csrfCookie) {
+    const csrfToken = csrfCookie.split('=')[1];
+    config.headers['X-XSRF-TOKEN'] = decodeURIComponent(csrfToken);
+  }
+
+  return config;
+});
+
 httpClient.interceptors.response.use(
   (response) => response,
   (error: unknown) => Promise.reject(toApiError(error)),
