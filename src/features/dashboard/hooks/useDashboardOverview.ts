@@ -3,7 +3,7 @@ import { useDeferredValue, useMemo } from 'react';
 
 import { QUERY_KEYS } from '@/utils';
 
-import { dashboardService } from '../services';
+import { dashboardService } from '../services/dashboard-service';
 import type { DashboardFilters } from '../types';
 
 export const useDashboardOverview = (filters: DashboardFilters) => {

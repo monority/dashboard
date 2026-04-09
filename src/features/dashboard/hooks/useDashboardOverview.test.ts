@@ -10,7 +10,7 @@ vi.mock('@tanstack/react-query', () => ({
   useQuery: useQueryMock,
 }));
 
-vi.mock('../services', () => ({
+vi.mock('../services/dashboard-service', () => ({
   dashboardService: {
     getOverview: getOverviewMock,
   },
@@ -60,6 +60,7 @@ describe('useDashboardOverview', () => {
     const queryResult = result.current as unknown as { queryFn: () => Promise<unknown> };
     await queryResult.queryFn();
 
+    expect(getOverviewMock).toHaveBeenCalledTimes(1);
     expect(getOverviewMock).toHaveBeenCalledWith({
       range: '7d',
       team: 'Finance',
