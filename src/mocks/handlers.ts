@@ -194,7 +194,7 @@ export const handlers = [
 
   // GET single task
   http.get(`${API_BASE_URL}/tasks/:id`, ({ params }) => {
-    const task = mockHandlers.tasks.find((t) => t.id === params.id);
+    const task = mockHandlers.tasks.find((t) => t['id'] === params['id']);
     if (!task) {
       return HttpResponse.json({ error: 'Task not found' }, { status: 404 });
     }
@@ -217,7 +217,7 @@ export const handlers = [
 
   // PUT update task
   http.put(`${API_BASE_URL}/tasks/:id`, async ({ params, request }) => {
-    const task = mockHandlers.tasks.find((t) => t.id === params.id);
+    const task = mockHandlers.tasks.find((t) => t['id'] === params['id']);
     if (!task) {
       return HttpResponse.json({ error: 'Task not found' }, { status: 404 });
     }
@@ -229,7 +229,7 @@ export const handlers = [
 
   // DELETE task
   http.delete(`${API_BASE_URL}/tasks/:id`, ({ params }) => {
-    const task = mockHandlers.tasks.find((t) => t.id === params.id);
+    const task = mockHandlers.tasks.find((t) => t['id'] === params['id']);
     if (!task) {
       return HttpResponse.json({ error: 'Task not found' }, { status: 404 });
     }
@@ -285,8 +285,9 @@ export const handlers = [
   // Auth endpoints
   http.post(`${API_BASE_URL}/auth/login`, async ({ request }) => {
     const body = await request.json();
-    const email = isPlainObject(body) && typeof body.email === 'string' ? body.email : '';
-    const password = isPlainObject(body) && typeof body.password === 'string' ? body.password : '';
+    const email = isPlainObject(body) && typeof body['email'] === 'string' ? body['email'] : '';
+    const password =
+      isPlainObject(body) && typeof body['password'] === 'string' ? body['password'] : '';
 
     if (!email || !password) {
       return HttpResponse.json({ error: 'Invalid credentials' }, { status: 400 });

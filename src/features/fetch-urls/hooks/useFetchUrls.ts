@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState, useCallback } from 'react';
 
 import { fetchUrlsService } from '../services/fetch-urls-service';
-import type { FetchUrlResponse, HttpMethod } from '../types';
+import type { FetchUrlRequest, FetchUrlResponse, HttpMethod } from '../types';
 
 interface UseFetchUrlsOptions {
   onSuccess?: (response: FetchUrlResponse) => void;
@@ -41,12 +41,12 @@ export function useFetchUrls(options?: UseFetchUrlsOptions): UseFetchUrlsReturn 
       body?: string;
       headers?: Record<string, string>;
     }) => {
-      const request = {
+      const request: FetchUrlRequest = {
         id: crypto.randomUUID(),
         url,
         method,
-        headers,
-        body,
+        headers: headers ?? {},
+        body: body ?? '',
         timestamp: Date.now(),
       };
 
@@ -69,7 +69,7 @@ export function useFetchUrls(options?: UseFetchUrlsOptions): UseFetchUrlsReturn 
 
   const execute = useCallback(
     (url: string, method: HttpMethod, body?: string, headers?: Record<string, string>) => {
-      mutation.mutate({ url, method, body, headers });
+      mutation.mutate({ url, method, body: body ?? '', headers: headers ?? {} });
     },
     [mutation],
   );
