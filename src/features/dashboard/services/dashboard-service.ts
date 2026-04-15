@@ -38,6 +38,8 @@ const BASE_TREND: DashboardTrendPoint[] = [
   { label: 'S8', value: 45200 },
   { label: 'S9', value: 46100 },
   { label: 'S10', value: 47200 },
+  { label: 'S11', value: 47900 },
+  { label: 'S12', value: 48500 },
 ];
 
 let currentTrend: DashboardTrendPoint[] = [...BASE_TREND];

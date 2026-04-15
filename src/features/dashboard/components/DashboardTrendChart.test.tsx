@@ -25,20 +25,15 @@ describe('DashboardTrendChart', () => {
     expect(screen.getByText('Mer')).toBeInTheDocument();
   });
 
-  it('affiche la valeur la plus recente dans le header', () => {
+  it('affiche la variation en pourcentage dans le header', () => {
     render(<DashboardTrendChart points={POINTS} />);
-    expect(screen.getByText(/au plus recent/)).toBeInTheDocument();
+    expect(screen.getByText(/%/)).toBeInTheDocument();
   });
 
-  it('garantit une hauteur minimum de 8% pour les barres', () => {
-    const flatPoints: DashboardTrendPoint[] = [
-      { label: 'A', value: 1000 },
-      { label: 'B', value: 1000 },
-    ];
-    const { container } = render(<DashboardTrendChart points={flatPoints} />);
-    const fills = container.querySelectorAll('.dashboard-chart-bar__fill');
-    expect(fills).toHaveLength(2);
-    expect(fills[0]).toHaveStyle({ height: '8%' });
-    expect(fills[1]).toHaveStyle({ height: '8%' });
+  it('affiche les stats (moyenne, min, max)', () => {
+    render(<DashboardTrendChart points={POINTS} />);
+    expect(screen.getByText('Moyenne')).toBeInTheDocument();
+    expect(screen.getByText('Min')).toBeInTheDocument();
+    expect(screen.getByText('Max')).toBeInTheDocument();
   });
 });
