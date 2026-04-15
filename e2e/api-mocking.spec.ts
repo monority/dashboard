@@ -3,17 +3,18 @@
  * These tests demonstrate how to mock API responses for E2E testing
  */
 
-import { test, expect } from './fixtures';
+import { test, expect } from '@playwright/test';
 
 test.describe('Task Management with API Mocking', () => {
-  test.beforeEach(async ({ page: _page }) => {
-    // Note: In real scenarios, you'd set up MSW in playwright.config.ts
-    // or use route interception as shown in the tests below
-  });
-
-  test('should fetch and display mocked tasks', async ({ page, mockAPI }) => {
+  test('should fetch and display mocked tasks', async ({ page }) => {
     // Mock the tasks API
-    await mockAPI('tasks');
+    await page.route('**/api/tasks*', (route) => {
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({ data: [] }),
+      });
+    });
 
     // Navigate to tasks page
     await page.goto('/task');

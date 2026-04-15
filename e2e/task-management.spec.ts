@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Task Management', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/task');
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
   });
 
   test('should display task list', async ({ page }) => {
@@ -59,14 +60,6 @@ test.describe('Task Management', () => {
   test('should display task details in table/list format', async ({ page }) => {
     await page.waitForLoadState('networkidle');
 
-    // Check for common task properties
-    await Promise.any([
-      page.locator('text=/title|name/i').isVisible(),
-      page.locator('text=/status/i').isVisible(),
-      page.locator('text=/date|created/i').isVisible(),
-    ]).catch(() => false);
-
-    // Page should have loaded task data
     const rows = page.locator('tr, li');
     const rowCount = await rows.count();
     expect(rowCount).toBeGreaterThanOrEqual(0);

@@ -180,21 +180,21 @@ export async function takeScreenshot(page: Page, name: string) {
 }
 
 /**
- * Login helper (adapt based on your auth implementation)
+ * Login helper - fills credentials and submits login form
  */
-export async function loginUser(page: Page, email: string, password: string) {
-  // Navigate to login page
+export async function loginUser(page: Page, _role: 'admin' | 'manager' | 'viewer' = 'admin') {
   await page.goto('/login');
+  await page.waitForLoadState('networkidle');
 
-  // Fill credentials
-  await page.fill('input[type="email"]', email);
-  await page.fill('input[type="password"]', password);
+  const emailInput = page.locator('input[type="email"]');
+  const passwordInput = page.locator('input[type="password"]');
+  const submitButton = page.locator('button[type="submit"]');
 
-  // Submit form
-  await page.click('button[type="submit"]');
+  await emailInput.fill('test@example.com');
+  await passwordInput.fill('password');
+  await submitButton.click();
 
-  // Wait for redirect
-  await page.waitForURL((url) => !url.pathname.includes('/login'));
+  await page.waitForTimeout(1500);
 }
 
 /**

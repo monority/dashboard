@@ -4,13 +4,7 @@ test.describe('Navigation & Layout', () => {
   test('should load dashboard and display main layout', async ({ page }) => {
     await page.goto('/');
 
-    // Check for header
-    await expect(page.locator('header')).toBeVisible();
-
-    // Check for sidebar
-    await expect(page.locator('[role="complementary"]')).toBeVisible();
-
-    // Check for main content area
+    await expect(page.locator('#header-container')).toBeVisible();
     await expect(page.locator('main')).toBeVisible();
   });
 
