@@ -18,43 +18,68 @@ const RANGE_POINT_COUNT: Record<DashboardRange, number> = {
   '90d': 12,
 };
 
-let dynamicKpis = [
-  { id: 'revenue', label: "Chiffre d'affaires total", value: 45000, trendPercent: 20.3 },
-  { id: 'subscriptions', label: 'Abonnements', value: 2350, trendPercent: 11.7 },
-  { id: 'sales', label: 'Ventes', value: 12500, trendPercent: 5.7 },
-  { id: 'active', label: 'Utilisateurs actifs', value: 125, trendPercent: 4.5 },
-];
+let revenueKpi = { value: 45000, trendPercent: 2.3 };
 
-setInterval(() => {
-  // Variation lente et naturelle des KPIs
-  dynamicKpis = dynamicKpis.map((kpi) => {
-    const variation = (Math.random() - 0.485) * 0.003; // Variation tres faible 0.3% max
-    const newValue = Math.max(0, kpi.value * (1 + variation));
-    return {
-      ...kpi,
-      value: Math.round(newValue),
-      trendPercent: Math.max(
-        -20,
-        Math.min(40, Math.round((variation * 100 + kpi.trendPercent * 0.99) * 10) / 10),
-      ),
-    };
-  });
-}, 5000);
+let dynamicKpis = [
+  { id: 'revenue', label: "Chiffre d'affaires total", value: 45000, trendPercent: 2.3 },
+  { id: 'subscriptions', label: 'Abonnements', value: 2350, trendPercent: 1.8 },
+  { id: 'sales', label: 'Ventes', value: 12500, trendPercent: -0.5 },
+  { id: 'active', label: 'Utilisateurs actifs', value: 125, trendPercent: 3.2 },
+];
 
 const BASE_TREND: DashboardTrendPoint[] = [
-  { label: 'W1', value: 21000 },
-  { label: 'W2', value: 22400 },
-  { label: 'W3', value: 21800 },
-  { label: 'W4', value: 23600 },
-  { label: 'W5', value: 24100 },
-  { label: 'W6', value: 24750 },
-  { label: 'W7', value: 25200 },
-  { label: 'W8', value: 26800 },
-  { label: 'W9', value: 27400 },
-  { label: 'W10', value: 28700 },
-  { label: 'W11', value: 29450 },
-  { label: 'W12', value: 30600 },
+  { label: 'S1', value: 38500 },
+  { label: 'S2', value: 39200 },
+  { label: 'S3', value: 40100 },
+  { label: 'S4', value: 41500 },
+  { label: 'S5', value: 42800 },
+  { label: 'S6', value: 43900 },
+  { label: 'S7', value: 44800 },
+  { label: 'S8', value: 45200 },
+  { label: 'S9', value: 46100 },
+  { label: 'S10', value: 47200 },
 ];
+
+let currentTrend: DashboardTrendPoint[] = [...BASE_TREND];
+
+setInterval(() => {
+  const variation = (Math.random() - 0.48) * 0.01;
+  const newRevenue = Math.max(35000, revenueKpi.value * (1 + variation));
+  revenueKpi = {
+    value: Math.round(newRevenue),
+    trendPercent:
+      Math.round(
+        Math.max(-10, Math.min(10, revenueKpi.trendPercent * 0.6 + variation * 100 * 0.4)) * 10,
+      ) / 10,
+  };
+
+  currentTrend = currentTrend.map((point) => ({
+    ...point,
+    value: Math.round(point.value * (1 + (Math.random() - 0.48) * 0.008)),
+  }));
+  const lastPoint = currentTrend[currentTrend.length - 1];
+  if (lastPoint) {
+    const idx = currentTrend.indexOf(lastPoint);
+    currentTrend[idx] = { label: lastPoint.label, value: revenueKpi.value };
+  }
+
+  dynamicKpis = [
+    {
+      id: 'revenue',
+      label: "Chiffre d'affaires total",
+      value: revenueKpi.value,
+      trendPercent: revenueKpi.trendPercent,
+    },
+    ...dynamicKpis.slice(1).map((kpi) => ({
+      ...kpi,
+      value: Math.round(Math.max(0, kpi.value * (1 + (Math.random() - 0.48) * 0.02))),
+      trendPercent:
+        Math.round(
+          Math.max(-15, Math.min(15, kpi.trendPercent * 0.7 + (Math.random() - 0.48) * 50)) * 10,
+        ) / 10,
+    })),
+  ];
+}, 3000);
 
 const BASE_ACTIVITIES: DashboardActivityItem[] = [
   {
@@ -184,7 +209,7 @@ const toSafeTimestamp = (date: string) => {
 const getTrendForRange = (range: DashboardRange) => {
   const points = RANGE_POINT_COUNT[range];
 
-  return BASE_TREND.slice(-points);
+  return currentTrend.slice(-points);
 };
 
 const buildOverview = (filters: DashboardFilters): DashboardOverview => {

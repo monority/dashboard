@@ -8,7 +8,9 @@ import type { BaseComponentProps, SelectOption } from '@/types';
  * @template TValue - The type of the select value (must extend string)
  */
 interface SelectProps<TValue extends string>
-  extends BaseComponentProps, Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'> {
+  extends
+    BaseComponentProps,
+    Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange' | keyof BaseComponentProps> {
   /** Array of selectable options */
   options: SelectOption<TValue>[];
   /** Current selected value */

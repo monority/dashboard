@@ -26,8 +26,8 @@ export const test = base.extend<{
      * @param routeName - 'tasks', 'users', 'orders', 'mail', 'reviews'
      * @param response - Custom response data (optional)
      */
-    const mockAPI = async (routeName: string, response?: object) => {
-      const mockDataMap: Record<string, any> = {
+    const mockAPI = async (routeName: string, response?: Record<string, unknown>) => {
+      const mockDataMap: Record<string, unknown> = {
         tasks: mockHandlers.tasks,
         users: mockHandlers.users,
         orders: mockHandlers.orders,

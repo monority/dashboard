@@ -51,7 +51,7 @@ export async function getKeyboardAccessibleElements(page: Page) {
 
     return elements.map((el) => ({
       tag: el.tagName,
-      role: (el as any).role || el.getAttribute('role'),
+      role: el.getAttribute('role') || undefined,
       text: el.textContent?.substring(0, 50) || '',
       visible: (el as HTMLElement).offsetParent !== null,
     }));
@@ -106,8 +106,8 @@ export async function checkAccessibilityBaseline(page: Page) {
     const accessibleLinks = await page.evaluate(() => {
       return Array.from(document.querySelectorAll('a')).filter((link) => {
         const text = link.textContent?.trim();
-        const ariaLabel = (link as any).getAttribute('aria-label');
-        const title = (link as any).getAttribute('title');
+        const ariaLabel = link.getAttribute('aria-label');
+        const title = link.getAttribute('title');
         return text || ariaLabel || title;
       }).length;
     });
@@ -150,7 +150,7 @@ export async function measureLayoutShift(page: Page): Promise<number> {
 
       const observer = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          const perfEntry = entry as any;
+          const perfEntry = entry as LayoutShift;
           if (!perfEntry.hadRecentInput) {
             totalLayoutShift += perfEntry.value;
           }

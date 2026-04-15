@@ -1,22 +1,8 @@
 import { render, type RenderOptions } from '@testing-library/react';
 import type { ReactElement, ReactNode } from 'react';
+import React from 'react';
 import { MemoryRouter, type MemoryRouterProps } from 'react-router-dom';
 
-/**
- * Custom render function that wraps components with necessary providers.
- * Automatically includes MemoryRouter for components that need routing.
- *
- * @param ui - React component to render
- * @param options - Render options and router configuration
- * @returns Render result with React Testing Library utilities
- *
- * @example
- * import { screen } from '@testing-library/react';
- * import { renderWithRouter } from '@/test-utils';
- *
- * const { getByRole } = renderWithRouter(<MyComponent />);
- * // Component can now use useNavigate, useLocation, etc.
- */
 export const renderWithRouter = (
   ui: ReactElement,
   {
@@ -25,7 +11,6 @@ export const renderWithRouter = (
   }: RenderOptions & { initialEntries?: MemoryRouterProps['initialEntries'] } = {},
 ) => {
   const Wrapper = ({ children }: { children: ReactNode }) => {
-    const React = require('react');
     return React.createElement(MemoryRouter, { initialEntries }, children);
   };
 
@@ -97,6 +82,7 @@ export const waitForText = (
  * const { getByRole, getByLabelText } = screen;
  * screen.expectVisible('Success');
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const createScreenUtils = (queriesFromRTL: any) => ({
   ...queriesFromRTL,
   expectVisible: (text: string | RegExp, expectFn?: (el: HTMLElement) => void) => {

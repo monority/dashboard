@@ -2,14 +2,11 @@ import { useId, type InputHTMLAttributes } from 'react';
 
 import type { BaseComponentProps } from '@/types';
 
-/**
- * Props for the Input component
- * @extends BaseComponentProps
- */
-interface InputProps extends BaseComponentProps, InputHTMLAttributes<HTMLInputElement> {
-  /** Optional label text displayed above the input */
+interface InputProps
+  extends
+    BaseComponentProps,
+    Omit<InputHTMLAttributes<HTMLInputElement>, keyof BaseComponentProps> {
   label?: string;
-  /** Error message to display below the input */
   errorMessage?: string;
 }
 

@@ -13,7 +13,7 @@ export const Shell = ({ sidebar, header, children }: ShellProps) => {
 
   return (
     <div className={`app-shell ${isSidebarOpen ? 'sidebar-open' : 'sidebar-collapsed'}`}>
-      <a className="app-skip-link" href="#main-content">
+      <a className="app-skip-link" href="#main-content" rel="noopener noreferrer">
         Aller au contenu principal
       </a>
       <aside className="app-shell__sidebar">{sidebar}</aside>

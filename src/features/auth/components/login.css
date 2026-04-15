@@ -69,3 +69,18 @@
 .login-hint li {
   margin: var(--space-1) 0;
 }
+
+.demo-account-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0;
+  font-size: var(--text-xs);
+  text-decoration: underline;
+  font-family: inherit;
+}
+
+.demo-account-btn:hover {
+  color: var(--primary-hover);
+}

@@ -78,9 +78,40 @@ const generateRandomJson = (): string => {
   return JSON.stringify(data, null, 2);
 };
 
+const ALLOWED_PROTOCOLS = ['https:', 'http:'];
+const BLOCKED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '::1', '169.254.169.254'];
+const BLOCKED_PATTERNS = [/amazonaws\.com$/, /googleusercontent\.com$/, /cloudflare\.com$/];
+
+const isUrlAllowed = (url: string): boolean => {
+  try {
+    const parsed = new URL(url);
+    if (!ALLOWED_PROTOCOLS.includes(parsed.protocol)) return false;
+    if (BLOCKED_HOSTS.includes(parsed.hostname)) return false;
+    if (BLOCKED_PATTERNS.some((pattern) => pattern.test(parsed.hostname))) return false;
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 export const fetchUrlsService = {
   async execute(request: FetchUrlRequest): Promise<FetchUrlResponse> {
     const startTime = performance.now();
+
+    if (!isUrlAllowed(request.url)) {
+      return {
+        id: generateId(),
+        request,
+        status: 403,
+        statusText: 'Forbidden',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ error: 'URL not allowed for security reasons' }),
+        duration: 0,
+        size: 47,
+        timestamp: Date.now(),
+      };
+    }
+
     const delay = request.method === 'GET' ? Math.random() * 300 + 100 : Math.random() * 500 + 200;
     await wait(delay);
 
@@ -140,7 +171,7 @@ export const fetchUrlsService = {
   },
 
   getHistory(): FetchUrlResponse[] {
-    const stored = localStorage.getItem('fetch-urls-history');
+    const stored = sessionStorage.getItem('fetch-urls-history');
     if (stored) {
       try {
         return JSON.parse(stored);
@@ -154,11 +185,11 @@ export const fetchUrlsService = {
   saveToHistory(response: FetchUrlResponse): void {
     const history = this.getHistory();
     const updated = [response, ...history].slice(0, 50);
-    localStorage.setItem('fetch-urls-history', JSON.stringify(updated));
+    sessionStorage.setItem('fetch-urls-history', JSON.stringify(updated));
   },
 
   clearHistory(): void {
-    localStorage.removeItem('fetch-urls-history');
+    sessionStorage.removeItem('fetch-urls-history');
   },
 
   getSuggestedUrls(): string[] {

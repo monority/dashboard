@@ -26,47 +26,48 @@
     "analyze": "vite build --mode analyze"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.80.7",
-    "@tanstack/react-virtual": "^3.13.7",
-    "axios": "^1.9.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.5.1",
+    "@tanstack/react-query": "^5.99.0",
+    "@tanstack/react-virtual": "^3.13.23",
+    "axios": "^1.15.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.1",
     "recharts": "^3.8.1",
     "socket.io-client": "^4.8.3",
-    "zustand": "^5.0.8"
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.59.1",
-    "@tailwindcss/vite": "^4.1.7",
+    "@tailwindcss/vite": "^4.2.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/node": "^22.15.19",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.33.1",
-    "@typescript-eslint/parser": "^8.33.1",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.22.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.31.0",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/parser": "^8.58.2",
+    "@vitejs/plugin-react": "^6.0.1",
+    "esbuild": "^0.28.0",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
     "husky": "^9.1.7",
-    "jsdom": "^29.0.1",
-    "lint-staged": "^15.5.2",
-    "msw": "^2.12.14",
-    "prettier": "^3.5.3",
-    "rollup-plugin-visualizer": "^5.14.0",
+    "jsdom": "^29.0.2",
+    "lint-staged": "^16.4.0",
+    "msw": "^2.13.3",
+    "prettier": "^3.8.2",
+    "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.8.3",
-    "vite": "^6.4.2",
-    "vite-plugin-compression2": "^1.3.1",
-    "vitest": "^4.1.2"
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.8",
+    "vite-plugin-compression2": "^2.5.3",
+    "vitest": "^4.1.4"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -77,5 +78,8 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "onlyBuiltDependencies": "esbuild"
+  }
 }

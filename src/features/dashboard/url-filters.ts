@@ -1,6 +1,19 @@
 import { DASHBOARD_RANGES, DASHBOARD_TEAMS } from './types';
 import type { DashboardFilters } from './types';
 
+const XSS_PATTERN = /[<>'"&]/g;
+const XSS_REPLACEMENT: Record<string, string> = {
+  '<': '&lt;',
+  '>': '&gt;',
+  "'": '&#39;',
+  '"': '&quot;',
+  '&': '&amp;',
+};
+
+const sanitizeXss = (input: string): string => {
+  return input.replace(XSS_PATTERN, (char) => XSS_REPLACEMENT[char] ?? char);
+};
+
 export const DEFAULT_DASHBOARD_FILTERS: DashboardFilters = {
   range: '30d',
   team: 'all',
@@ -10,7 +23,7 @@ export const DEFAULT_DASHBOARD_FILTERS: DashboardFilters = {
 export const parseDashboardFilters = (searchParams: URLSearchParams): DashboardFilters => {
   const nextRangeRaw = searchParams.get('range');
   const nextTeamRaw = searchParams.get('team');
-  const nextSearch = searchParams.get('search') ?? '';
+  const nextSearch = sanitizeXss(searchParams.get('search') ?? '');
 
   const nextRange = DASHBOARD_RANGES.includes(nextRangeRaw as DashboardFilters['range'])
     ? (nextRangeRaw as DashboardFilters['range'])

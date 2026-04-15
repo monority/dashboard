@@ -9,13 +9,12 @@ import { defineConfig } from 'vitest/config';
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
-// @ts-ignore
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     tailwindcss(),
-    compression({ algorithm: 'gzip' }),
-    compression({ algorithm: 'brotliCompress' }),
+    compression({ algorithms: ['gzip'] }),
+    compression({ algorithms: ['brotliCompress'] }),
     mode === 'analyze' &&
       visualizer({
         open: true,

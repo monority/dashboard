@@ -21,7 +21,9 @@ declare global {
  * This function is injected into every page created by Playwright
  * It sets up MSW for API mocking in E2E tests
  */
-export async function initializeMSW(page: any) {
+import type { Page } from '@playwright/test';
+
+export async function initializeMSW(page: Page) {
   // Path to the MSW worker script
   const workerPath = path.resolve('node_modules/msw/browser');
 
