@@ -23,7 +23,7 @@ export const toApiError = (error: unknown): ApiError => {
       message: axiosError.response?.data?.message ?? 'Une erreur reseau est survenue.',
       code: axiosError.response?.data?.code ?? 'NETWORK_ERROR',
       status: axiosError.response?.status ?? 500,
-      details: axiosError.response?.data?.details ?? {},
+      details: axiosError.response?.data?.details,
     };
   }
 
