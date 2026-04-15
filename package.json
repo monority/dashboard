@@ -13,7 +13,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "vitest run",
+    "test": "pnpm install --force && vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
@@ -83,6 +83,17 @@
     "onlyBuiltDependencies": [
       "esbuild",
       "@tailwindcss/oxide"
-    ]
+    ],
+    "supportedArchitectures": {
+      "os": [
+        "win32",
+        "linux",
+        "darwin"
+      ],
+      "cpu": [
+        "x64",
+        "arm64"
+      ]
+    }
   }
 }
