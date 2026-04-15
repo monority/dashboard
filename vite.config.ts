@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -9,20 +10,28 @@ import { defineConfig } from 'vitest/config';
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig(({ mode }) => ({
-  plugins: [
+const getPlugins = (mode: string): any[] => {
+  const plugins: any[] = [
     react(),
     tailwindcss(),
     compression({ algorithms: ['gzip'] }),
     compression({ algorithms: ['brotliCompress'] }),
-    mode === 'analyze' &&
+  ];
+  if (mode === 'analyze') {
+    plugins.push(
       visualizer({
         open: true,
         filename: 'dist/stats.html',
         gzipSize: true,
         brotliSize: true,
       }),
-  ].filter(Boolean),
+    );
+  }
+  return plugins;
+};
+
+export default defineConfig(({ mode }) => ({
+  plugins: getPlugins(mode),
   resolve: {
     alias: {
       '@': path.resolve(currentDir, './src'),
