@@ -13,7 +13,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "pnpm install --force && vitest run",
+    "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
@@ -94,6 +94,9 @@
         "x64",
         "arm64"
       ]
+    },
+    "overrides": {
+      "@exodus/bytes": "1.14.0"
     }
   }
 }
