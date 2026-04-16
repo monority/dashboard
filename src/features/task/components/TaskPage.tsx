@@ -46,13 +46,27 @@ export const TaskPage = () => {
     [],
   );
 
-  const { data: tasks = [], isLoading } = useTasks({
+  const {
+    data: tasks = [],
+    isLoading,
+    error,
+  } = useTasks({
     search: debouncedSearch,
     status: statusFilter,
   });
 
   const selectedCount = selectedIds.size;
   const canResetFilters = statusFilter !== 'all' || search.trim() !== '';
+
+  if (error) {
+    return (
+      <section className="task-page">
+        <div role="alert" className="error-message">
+          Erreur de chargement des tâches
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="task-page">

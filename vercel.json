@@ -6,6 +6,9 @@
       "destination": "/index.html"
     }
   ],
+  "git": {
+    "deploymentEnabled": false
+  },
   "headers": [
     {
       "source": "/(.*)",
