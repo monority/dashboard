@@ -18,7 +18,9 @@ export const Shell = ({ sidebar, header, children }: ShellProps) => {
       </a>
       <aside className="app-shell__sidebar">{sidebar}</aside>
       <div className="app-shell__main">
-        <header className="app-shell__header">{header}</header>
+        <header id="header-container" className="app-shell__header">
+          {header}
+        </header>
         <main id="main-content" className="app-shell__content" tabIndex={-1}>
           {children}
         </main>

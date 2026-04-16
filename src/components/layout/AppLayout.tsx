@@ -8,9 +8,7 @@ export const AppLayout = () => {
 
   return (
     <Shell sidebar={<Sidebar />} header={<Header />}>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </Shell>
   );
 };

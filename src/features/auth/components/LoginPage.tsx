@@ -123,7 +123,7 @@ export function LoginPage() {
   };
 
   return (
-    <div className="login-page">
+    <main className="login-page">
       <Card className="login-card">
         <h1>Sign In</h1>
         <p className="login-subtitle">Enter your credentials to access the dashboard</p>
@@ -190,6 +190,6 @@ export function LoginPage() {
           </ul>
         </div>
       </Card>
-    </div>
+    </main>
   );
 }
