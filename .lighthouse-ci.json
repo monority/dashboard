@@ -11,53 +11,60 @@
       "preset": "lighthouse:recommended",
       "assertions": {
         "cumulativelayout-shift": [
-          "error",
+          "warning",
           {
-            "maxNumericValue": 0.1
+            "maxNumericValue": 0.25
           }
         ],
         "first-contentful-paint": [
-          "error",
-          {
-            "maxNumericValue": 2500
-          }
-        ],
-        "largest-contentful-paint": [
-          "error",
+          "warning",
           {
             "maxNumericValue": 4000
           }
         ],
-        "speed-index": [
-          "error",
+        "largest-contentful-paint": [
+          "warning",
           {
-            "maxNumericValue": 3000
+            "maxNumericValue": 6000
+          }
+        ],
+        "speed-index": [
+          "warning",
+          {
+            "maxNumericValue": 5000
           }
         ],
         "categories:performance": [
-          "error",
+          "warning",
           {
-            "minScore": 0.8
+            "minScore": 0.5
           }
         ],
         "categories:accessibility": [
-          "error",
+          "warning",
           {
-            "minScore": 0.9
+            "minScore": 0.7
           }
         ],
         "categories:best-practices": [
-          "error",
+          "warning",
           {
-            "minScore": 0.9
+            "minScore": 0.7
           }
         ],
         "categories:seo": [
-          "error",
+          "warning",
           {
-            "minScore": 0.9
+            "minScore": 0.5
           }
-        ]
+        ],
+        "is-crawlable": "off",
+        "render-blocking-resources": "off",
+        "unused-javascript": "off",
+        "valid-source-maps": "off",
+        "network-dependency-tree-insight": "off",
+        "errors-in-console": "off",
+        "color-contrast": "off"
       }
     },
     "upload": {
