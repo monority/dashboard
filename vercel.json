@@ -44,29 +44,10 @@
       ]
     }
   ],
-  "routes": [
+  "cache": [
     {
-      "src": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "x-malicious-pattern",
-          "check": {
-            "pattern": "(?i)(sql注入|union.*select|eval\\(|script|<iframe)"
-          }
-        }
-      ],
-      "mitigate": "deny"
-    },
-    {
-      "src": "/api/(.*)",
-      "has": [
-        {
-          "type": "method",
-          "key": "X-Forwarded-For"
-        }
-      ],
-      "middleware": 1
+      "path": "/",
+      "ext": ["html"]
     }
   ]
 }
