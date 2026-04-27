@@ -1,60 +1,52 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hub admin - Panneau d'administration interne pour piloter les operations, tickets, avis et parametres depuis une interface React rapide et accessible."
-    />
-    <meta name="application-name" content="Hub admin" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="theme-color" content="#0f62fe" />
-    <meta name="color-scheme" content="light dark" />
 
-    <!-- Security Headers -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
-    />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="dashboard" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Hub admin - Panneau d'administration interne pour piloter les operations, tickets, avis et parametres depuis une interface React rapide et accessible." />
+  <meta name="application-name" content="Hub admin" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="theme-color" content="#0f62fe" />
+  <meta name="color-scheme" content="light dark" />
 
-    <meta property="og:title" content="Hub admin - Dashboard" />
-    <meta
-      property="og:description"
-      content="Panneau d'administration interne pour piloter les operations"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hub-admin.vercel.app" />
-    <meta property="og:site_name" content="Hub admin" />
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hub admin" />
-    <meta name="twitter:description" content="Panneau d'administration interne React" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Hub admin</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hub admin" />
+  <meta name="twitter:description" content="Panneau d'administration interne React" />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <title>Dashboard</title>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Hub Admin Dashboard",
         "description": "Panneau d'administration interne pour piloter les operations, tickets, avis et parametres depuis une interface React rapide et accessible.",
-        "url": "https://hub-admin.vercel.app",
+        "url": "https://dashboard-rch.vercel.app",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "offers": {
@@ -65,9 +57,9 @@
         "author": {
           "@type": "Organization",
           "name": "Hub Admin",
-          "url": "https://hub-admin.vercel.app"
+          "url": "https://dashboard-rch.vercel.app"
         },
-        "screenshot": "https://hub-admin.vercel.app/images/chart-title.png",
+        "screenshot": "https://dashboard-rch.vercel.app/images/chart-title.png",
         "softwareVersion": "1.0.0",
         "featureList": [
           "Dashboard analytics",
@@ -79,7 +71,7 @@
       }
     </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -101,10 +93,11 @@
         }
       }
     </script>
-  </head>
+</head>
 
-  <body data-theme="light">
-    <div id="root"></div>
-    <script type="module" src="/src/Main.tsx"></script>
-  </body>
+<body data-theme="light">
+  <div id="root"></div>
+  <script type="module" src="/src/Main.tsx"></script>
+</body>
+
 </html>
